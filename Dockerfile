@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8080
 
 # Run app
-CMD ["npm", "start"]
+CMD ["npm", "serve"]
