@@ -17,5 +17,8 @@ COPY . .
 # app binds to 8080 as per express
 EXPOSE 8080
 
+# Build app
+CMD ["npm", "run-script", "build"]
+
 # Run app
-CMD ["npm", "serve"]
+CMD ["npm", "run-script", "serve"]
