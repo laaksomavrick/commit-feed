@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon lib/index.js --exec babel-node",
-    "build": "babel lib -d dist",
+    "start": "nodemon app/index.js --exec babel-node",
+    "build": "babel app -d dist",
     "serve": "node dist/index.js"
   },
   "author": "Mavrick Laakso",
@@ -13,7 +13,8 @@
   "dependencies": {
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
-    "passport": "^0.4.0"
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
