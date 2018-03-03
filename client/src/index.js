@@ -1,11 +1,5 @@
-console.log("hello, world!")
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App.jsx'
 
-alert("hue")
-const x = [1,2,3].map((e) => e + 1)
-console.log(x)
-
-console.log("asdasd")
-
-console.log("qweqwe")
-
-console.log("asdasd")
+ReactDOM.render(<App />, document.getElementById('root'))
