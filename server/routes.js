@@ -8,6 +8,10 @@ import passport from 'passport'
 
 let router = express.Router()
 
+router.get('/heartbeat', (req, res) => {
+  const status = { alive: true }
+  res.json(status)
+})
 router.get('/auth', passport.authenticate('github'))
 router.get('/auth/callback', auth_controller.callback)
 
