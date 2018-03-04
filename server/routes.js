@@ -3,25 +3,17 @@
 'use strict'
 
 import express from 'express'
-import auth_controller from './auth/auth_controller'
 import passport from 'passport'
+import { is_authenticated } from './auth/auth_service'
 
 let router = express.Router()
 
+router.use('/', is_authenticated)
+
 router.get('/heartbeat', (req, res) => {
-  const status = { alive: true, user: req.user, session: req.session }
-  res.json(status)
+  const data= { alive: true, user: req.user, session: req.session }
+  res.json(data)
 })
 
-router.get('/auth/github', passport.authenticate('github'))
-
-router.get('/auth/github/callback', 
-  passport.authenticate('github', {
-    failureRedirect: '/'
-  }),
-  (req, res) => {
-    res.redirect('/')
-  }
-)
 
 export default router

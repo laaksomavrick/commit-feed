@@ -1,6 +1,9 @@
-'use strict'
-
 // index.js, server initialization
+
+
+
+
+'use strict'
 
 import dotenv from 'dotenv'
 import express from 'express'
@@ -9,7 +12,9 @@ import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
 import express_session from 'express-session'
 
-import routes from './routes'
+import api_routes from './routes'
+import auth_routes from './auth/auth_routes'
+
 import * as auth_service from './auth/auth_service'
 
 const env = dotenv.config()
@@ -27,12 +32,18 @@ passport.deserializeUser(auth_service.deserialize)
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/api', routes)
+app.use('/auth', auth_routes)
+app.use('/api', api_routes)
+
+// Debug routes
+// const expressListRoutes = require('express-list-routes')
+// expressListRoutes({ prefix: '/auth', }, 'API:', auth_routes)
 
 app.get('*', (req, res) => {
   const data = { error: 'Route not found'}
   res.status(404).json(data)
 })
+
 
 app.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
 console.log(`Running server on http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`)

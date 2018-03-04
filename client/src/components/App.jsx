@@ -21,7 +21,7 @@ export default class App extends React.Component {
       <div>
         <h1> Hello, world! </h1>
         <button onClick={this.test}>Heartbeat</button>
-        <a href="/api/auth/github"> Login with GitHub </a>
+        <a href="/auth/github"> Login with GitHub </a>
       </div>
     )
   }

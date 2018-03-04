@@ -29,5 +29,6 @@ export const deserialize = (obj, cb) => {
   cb(null, obj)
 }
 
-
-
+export const is_authenticated = (req, res, next) => {
+  req.isAuthenticated() ? next() : res.status(401).send({ message: "Authentication is required" })
+}
