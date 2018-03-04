@@ -13,8 +13,12 @@
   "author": "Mavrick Laakso",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
     "react": "^16.2.0",

@@ -14,10 +14,11 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# app binds to 8080 as per express
-EXPOSE 8080
+# app binds to 3001 as per EXPRESS_PORT in .env
+EXPOSE 3001
 
 # Build app
+#TODO front end
 CMD ["npm", "run-script", "build"]
 
 # Run app

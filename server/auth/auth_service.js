@@ -2,12 +2,9 @@
 
 'use strict'
 
-import passport from 'passport'
 import github from 'passport-github'
 
-let service = {}
-
-service.strategy = () => {
+export const strategy = () => {
 
   const Strategy = github.Strategy
   const data = {
@@ -17,7 +14,6 @@ service.strategy = () => {
   }
 
   const callback = (access_token, refresh_token, profile, cb) => {
-    //todo: database stuff
     return cb(null, profile)
   }
 
@@ -25,7 +21,13 @@ service.strategy = () => {
 
 }
 
-export default service
+export const serialize = (user, cb) => {
+  cb(null, user)
+}
+
+export const deserialize = (obj, cb) => {
+  cb(null, obj)
+}
 
 
 

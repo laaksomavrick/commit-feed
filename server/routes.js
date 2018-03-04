@@ -9,10 +9,19 @@ import passport from 'passport'
 let router = express.Router()
 
 router.get('/heartbeat', (req, res) => {
-  const status = { alive: true }
+  const status = { alive: true, user: req.user, session: req.session }
   res.json(status)
 })
-router.get('/auth', passport.authenticate('github'))
-router.get('/auth/callback', auth_controller.callback)
+
+router.get('/auth/github', passport.authenticate('github'))
+
+router.get('/auth/github/callback', 
+  passport.authenticate('github', {
+    failureRedirect: '/'
+  }),
+  (req, res) => {
+    res.redirect('/')
+  }
+)
 
 export default router
