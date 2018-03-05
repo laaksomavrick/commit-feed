@@ -1,4 +1,14 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom'
+
+import Login from './Login.jsx'
+import Home from './Home.jsx'
 
 export default class App extends React.Component {
 
@@ -18,11 +28,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1> Hello, world! </h1>
-        <button onClick={this.test}>Heartbeat</button>
-        <a href="/auth/github"> Login with GitHub </a>
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={() => <Redirect to="/home" />} /> 
+          <Route path="/login" component={Login} />
+          <Route path="/home" component={Home} />
+        </div>
+      </Router>
     )
   }
 
