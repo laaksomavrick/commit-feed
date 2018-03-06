@@ -7,8 +7,8 @@ import {
   withRouter
 } from 'react-router-dom'
 
-import Login from './Login.jsx'
-import Home from './Home.jsx'
+import Login from './Login.js'
+import Home from './Home.js'
 
 export default class App extends React.Component {
 
