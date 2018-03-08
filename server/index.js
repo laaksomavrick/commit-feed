@@ -1,8 +1,5 @@
 // index.js, server initialization
 
-
-
-
 'use strict'
 
 import dotenv from 'dotenv'
@@ -23,7 +20,7 @@ const app = express()
 
 app.use(cookie_parser())
 app.use(body_parser.urlencoded({ extended: true }))
-app.use(express_session({ secret: process.env.EXPRESS_SESSION_SECRET, resave: true, saveUninitialized: true }))
+app.use(express_session({ secret: process.env.EXPRESS_SESSION_SECRET, resave: true, saveUninitialized: true , cookie: {maxAge: 3600000}}))
 
 passport.use(new auth_service.strategy)
 passport.serializeUser(auth_service.serialize)

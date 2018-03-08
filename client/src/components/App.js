@@ -7,6 +7,7 @@ import {
   withRouter
 } from 'react-router-dom'
 
+import PrivateRoute from './PrivateRoute.js'
 import Login from './Login.js'
 import Home from './Home.js'
 
@@ -32,7 +33,7 @@ export default class App extends React.Component {
         <div>
           <Route exact path="/" component={() => <Redirect to="/home" />} /> 
           <Route path="/login" component={Login} />
-          <Route path="/home" component={Home} />
+          <PrivateRoute path="/home" component={Home} />
         </div>
       </Router>
     )
