@@ -4,6 +4,7 @@
 
 import dotenv from 'dotenv'
 import express from 'express'
+import connect_redis from 'connect-redis'
 import passport from 'passport'
 import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
@@ -15,12 +16,19 @@ import auth_routes from './auth/auth_routes'
 import * as auth_service from './auth/auth_service'
 
 const env = dotenv.config()
-
 const app = express()
+const session_store = connect_redis(express_session) //TODO: should redis have some sort of .env config?
 
 app.use(cookie_parser())
 app.use(body_parser.urlencoded({ extended: true }))
-app.use(express_session({ secret: process.env.EXPRESS_SESSION_SECRET, resave: true, saveUninitialized: true , cookie: {maxAge: 3600000}}))
+app.use(express_session
+  ({ 
+    store: new session_store,
+    secret: process.env.EXPRESS_SESSION_SECRET, 
+    resave: true, 
+    saveUninitialized: true
+  })
+)
 
 passport.use(new auth_service.strategy)
 passport.serializeUser(auth_service.serialize)

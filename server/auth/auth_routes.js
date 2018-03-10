@@ -15,7 +15,7 @@ router.get('/github/callback',
   }),
   (req, res) => {
     res.cookie("sessionIsAlive", "1", {
-      expres: new Date(Date.now() + 3600000),
+      expres: new Date(Date.now() + 6000000),
       httpOnly: false
     })
     res.redirect('/')
