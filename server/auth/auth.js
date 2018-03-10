@@ -1,8 +1,9 @@
-// auth_service.js
+// auth / auth.js
 
 'use strict'
 
 import github from 'passport-github'
+import user from '../models/user'
 
 export const strategy = () => {
 
@@ -14,7 +15,23 @@ export const strategy = () => {
   }
 
   const callback = (access_token, refresh_token, profile, cb) => {
-    return cb(null, profile)
+
+    const name = profile.username
+    const email = profile._json.email
+    const external_id = profile._json.id
+
+    user.findOrCreate(
+      {
+        where: { name, email, external_id }, 
+        defaults: { name, email, access_token }
+      })
+      .spread((user, created) => {
+        return cb(null, user)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
   }
 
   return new Strategy(data, callback)

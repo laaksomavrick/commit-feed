@@ -1,4 +1,4 @@
-// auth_routes.js
+// auth / routes.js
 
 'use strict'
 

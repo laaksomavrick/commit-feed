@@ -4,7 +4,7 @@
 
 import express from 'express'
 import passport from 'passport'
-import { is_authenticated } from './auth/auth_service'
+import { is_authenticated } from './auth/auth'
 
 let router = express.Router()
 

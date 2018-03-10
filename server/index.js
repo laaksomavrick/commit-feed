@@ -10,12 +10,13 @@ import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
 import express_session from 'express-session'
 
+import db from './database/db'
 import api_routes from './routes'
-import auth_routes from './auth/auth_routes'
+import auth_routes from './auth/routes'
 
-import * as auth_service from './auth/auth_service'
+import * as auth_service from './auth/auth'
 
-const env = dotenv.config()
+const _ = dotenv.config()
 const app = express()
 const session_store = connect_redis(express_session) //TODO: should redis have some sort of .env config?
 
@@ -49,6 +50,13 @@ app.get('*', (req, res) => {
   res.status(404).json(data)
 })
 
+db.authenticate()
+  .then(() => {
+    console.log(`Running database on ${process.env.DB_USER}@${process.env.DB_HOST}`)
+    app.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
+    console.log(`Running server on http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`)
+  })
+  .catch(err => {
+    console.log(`Error connecting database: \n, ${err}`) 
+  })
 
-app.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
-console.log(`Running server on http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`)
