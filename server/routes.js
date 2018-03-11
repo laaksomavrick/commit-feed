@@ -10,6 +10,8 @@ import user_controller from './controllers/user'
 
 let router = express.Router()
 
+router.use(is_authenticated)
+
 router.get('/heartbeat', (req, res) => {
   const data= { alive: true, user: req.user, session: req.session }
   res.json(data)
