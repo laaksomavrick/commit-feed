@@ -1,3 +1,6 @@
+// App.js
+// Highest level component; disjointed between login and authenticated app
+
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -12,20 +15,6 @@ import Login from './Login.js'
 import Home from './Home.js'
 
 export default class App extends React.Component {
-
-  componentDidMount() {
-    this.test()
-  }
-
-  test = () => {
-    fetch('/api/heartbeat', {
-      headers: { "Content-Type": "application/json" },
-      credentials: "same-origin"
-    })
-      .then(res => res.json())
-      .then(json => console.log(json))
-      .catch(err => console.log(err))
-  }
 
   render() {
     return (

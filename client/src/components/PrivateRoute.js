@@ -1,3 +1,6 @@
+// PrivateRoute.js
+// Router component to guard certain client side routes
+
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 

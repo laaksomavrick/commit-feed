@@ -1,17 +1,25 @@
+// reducers.js
+
+// reducers/reducers.js
+
 import { combineReducers } from 'redux'
+import authorized from './authorized.js'
+import user from './user.js'
 
-const initial_state = {
-  logged_in: false, //todo auth.loggedIn()
-}
+/*
+ *
+ *  {
+ *    authorized: bool
+ *    ui: { ... }
+ *    user: { ... }
+ *  }
+ *
+ */
 
-const reducer = (state = initial_state, action) => {
-  switch (action.type) {
-    default: return state
-  }
-}
 
 const root_reducer = combineReducers({
-  reducer 
+  authorized,
+  user
 })
 
 export default root_reducer

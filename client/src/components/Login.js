@@ -1,3 +1,6 @@
+// Login.js
+// The user facing login component/page
+
 import React from 'react'
 
 const Login = () => (
