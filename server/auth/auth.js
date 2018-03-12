@@ -20,10 +20,11 @@ export const strategy = () => {
     const email = profile._json.email
     const external_id = profile._json.id
 
+    //TODO: need to update access_token
     user.findOrCreate(
       {
         where: { name, email, external_id }, 
-        defaults: { name, email, access_token }
+        defaults: { name, email, access_token, external_id }
       })
       .spread((user, created) => {
         return cb(null, user)
