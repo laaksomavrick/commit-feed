@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
 import RootReducer from './reducers/reducers'
-import App from './components/App.js'
+import App from './components/App/App.js'
 
 export const store = createStore(
   RootReducer,

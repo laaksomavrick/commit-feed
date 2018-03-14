@@ -10,16 +10,17 @@ import {
   withRouter
 } from 'react-router-dom'
 
-import PrivateRoute from './PrivateRoute.js'
-import Login from './Login.js'
-import Home from './Home.js'
+import PrivateRoute from '../PrivateRoute.js'
+import Login from '../Login.js'
+import Home from '../Home/Home.js'
+import './App.css'
 
 export default class App extends React.Component {
 
   render() {
     return (
       <Router>
-        <div>
+        <div className="app-container">
           <Route exact path="/" component={() => <Redirect to="/home" />} /> 
           <Route path="/login" component={Login} />
           <PrivateRoute path="/home" component={Home} />

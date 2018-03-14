@@ -3,7 +3,11 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { async_get_user } from '../actions/user'
+
+import NavigationBar from '../NavigationBar/NavigationBar.js'
+import { async_get_user } from '../../actions/user.js'
+
+import './Home.css'
 
 class Home extends React.Component {
 
@@ -27,7 +31,10 @@ class Home extends React.Component {
   render() {
     const state = this.props
     return (
-      <button onClick={this.heartbeat}>Heartbeat</button>
+      <div className="home-container">
+        <NavigationBar />
+        <button onClick={this.heartbeat}>Heartbeat</button>
+      </div>
     )
   }
 

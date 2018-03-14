@@ -36,6 +36,17 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.css$/,
+        use: 'style-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: false
+        }
+      }
     ]
   },
 
