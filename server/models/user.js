@@ -1,7 +1,8 @@
-'use strict'
+// models/user.js
 
 import sequelize from 'sequelize'
 import db from '../database/db'
+import project from './project'
 
 const user = db.define('user', {
   name: sequelize.STRING,
@@ -11,5 +12,10 @@ const user = db.define('user', {
 }, {
   underscored: true
 })
+
+console.log("here")
+console.log(project)
+
+user.hasMany(project, { through: 'user_project_map' })
 
 export default user
