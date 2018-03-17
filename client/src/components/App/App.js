@@ -17,6 +17,8 @@ import './App.css'
 
 export default class App extends React.Component {
 
+  //TODO: socket; singleton; don't bother with http
+
   render() {
     return (
       <Router>

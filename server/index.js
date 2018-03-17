@@ -50,7 +50,7 @@ app.get('*', (req, res) => {
   res.status(404).json(data)
 })
 
-db.authenticate()
+db.raw('SELECT 1+1 as result')
   .then(() => {
     console.log(`Running database on ${process.env.DB_USER}@${process.env.DB_HOST}`)
     app.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)

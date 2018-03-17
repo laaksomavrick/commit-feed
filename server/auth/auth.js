@@ -1,9 +1,7 @@
 // auth / auth.js
 
-'use strict'
-
 import github from 'passport-github'
-import user from '../models/user'
+import Query from '../queries'
 
 export const strategy = () => {
 
@@ -14,24 +12,19 @@ export const strategy = () => {
     callbackURL: process.env.GITHUB_CALLBACK_URL
   }
 
-  const callback = (access_token, refresh_token, profile, cb) => {
+  const callback = async (access_token, refresh_token, profile, cb) => {
 
     const name = profile.username
     const email = profile._json.email
     const external_id = profile._json.id
 
-    //TODO: need to update access_token
-    user.findOrCreate(
-      {
-        where: { name, email, external_id }, 
-        defaults: { name, email, access_token, external_id }
-      })
-      .spread((user, created) => {
-        return cb(null, user)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    const conditions = { name, email, external_id }
+    const user = { name, email, external_id, access_token }
+
+    const Users = new Query('users')
+    await Users.create_or_update(conditions, user)
+
+    return cb(null, user)
 
   }
 
