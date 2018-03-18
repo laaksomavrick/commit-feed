@@ -1,7 +1,7 @@
 // auth / auth.js
 
 import github from 'passport-github'
-import Query from '../queries'
+import UserQuery from '../queries/user'
 
 export const strategy = () => {
 
@@ -19,10 +19,10 @@ export const strategy = () => {
     const external_id = profile._json.id
 
     const conditions = { name, email, external_id }
-    const user = { name, email, external_id, access_token }
+    const obj = { name, email, external_id, access_token }
 
-    const Users = new Query('users')
-    await Users.create_or_update(conditions, user)
+    const User = new UserQuery()
+    const user = await User.create_or_update(conditions, obj)
 
     return cb(null, user)
 

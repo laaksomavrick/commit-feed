@@ -13,7 +13,6 @@ import express_session from 'express-session'
 import db from './database/db'
 import api_routes from './routes'
 import auth_routes from './auth/routes'
-
 import * as auth_service from './auth/auth'
 
 const _ = dotenv.config()
@@ -48,6 +47,11 @@ app.use('/api', api_routes)
 app.get('*', (req, res) => {
   const data = { error: 'Route not found'}
   res.status(404).json(data)
+})
+
+app.use((err, req, res, next) => {
+  const error = err.toString()
+  res.status(500).send({ error })
 })
 
 db.raw('SELECT 1+1 as result')

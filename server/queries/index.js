@@ -18,22 +18,24 @@ export default class Query {
   }
 
   find = async (conditions) => {
-    const record = await db.table(this.TABLE).where(conditions).first('id')
+    const record = await db.table(this.TABLE).where(conditions).first()
     return record !== undefined ? record : null
   }
 
   find_by_id = async (id) => {
-    const record = await db.table(this.TABLE).where({ id }).first('id')
+    const record = await db.table(this.TABLE).where({ id }).first()
     return record !== undefined ? record : null
   }
 
   create = async (obj) => {
-    const record = await db.table(this.TABLE).insert(obj)
+    const rows = await db.table(this.TABLE).insert(obj)
+    const record = this.find(obj)
     return record !== undefined ? record : null
   }
 
   update = async (conditions, obj) => {
-    const record = await db.table(this.TABLE).where(conditions).update(obj)
+    const rows = await db.table(this.TABLE).where(conditions).update(obj)
+    const record = this.find(conditions)
     return record !== undefined ? record : null
   }
 

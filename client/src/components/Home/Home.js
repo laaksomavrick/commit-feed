@@ -12,6 +12,7 @@ import './Home.css'
 class Home extends React.Component {
 
   //TODO: loading mask
+  //TODO: socket!!!!!!!!!!!!!!!!!!!!!!!
   
   componentDidMount() {
     const { dispatch } = this.props
