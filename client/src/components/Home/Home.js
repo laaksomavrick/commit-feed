@@ -13,13 +13,15 @@ class Home extends React.Component {
 
   //TODO: loading mask
   //TODO: socket!!!!!!!!!!!!!!!!!!!!!!!
+  // won't be *that* hard to implement ;)
+  // --> create a singleton socket instance, use that in actions for network lvl stuff
   
   componentDidMount() {
     const { dispatch } = this.props
     dispatch(async_get_user())
   }
 
-  heartbeat = () => {
+  http_heartbeat = () => {
     fetch('/api/heartbeat', {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin'
@@ -34,7 +36,7 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         <NavigationBar />
-        <button onClick={this.heartbeat}>Heartbeat</button>
+        <button onClick={this.http_heartbeat}>http</button>
       </div>
     )
   }

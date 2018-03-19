@@ -9,7 +9,10 @@ import passport from 'passport'
 import cookie_parser from 'cookie-parser'
 import body_parser from 'body-parser'
 import express_session from 'express-session'
+import socketio from 'socket.io'
+import http from 'http'
 
+import socket_router from './socket'
 import db from './database/db'
 import api_routes from './routes'
 import auth_routes from './auth/routes'
@@ -18,17 +21,24 @@ import * as auth_service from './auth/auth'
 const _ = dotenv.config()
 const app = express()
 const session_store = connect_redis(express_session) //TODO: should redis have some sort of .env config?
-
-app.use(cookie_parser())
-app.use(body_parser.urlencoded({ extended: true }))
-app.use(express_session
-  ({ 
+const server = http.Server(app)
+const io = socketio(server)
+const session_middleware = express_session({ 
     store: new session_store,
     secret: process.env.EXPRESS_SESSION_SECRET, 
     resave: true, 
     saveUninitialized: true
-  })
-)
+})
+
+io.use((socket, next) => {
+  session_middleware(socket.request, socket.request.res, next) 
+})
+
+io.on('connection', socket_router)
+
+app.use(cookie_parser())
+app.use(body_parser.urlencoded({ extended: true }))
+app.use(session_middleware)
 
 passport.use(new auth_service.strategy)
 passport.serializeUser(auth_service.serialize)
@@ -57,7 +67,7 @@ app.use((err, req, res, next) => {
 db.raw('SELECT 1+1 as result')
   .then(() => {
     console.log(`Running database on ${process.env.DB_USER}@${process.env.DB_HOST}`)
-    app.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
+    server.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
     console.log(`Running server on http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`)
   })
   .catch(err => {
