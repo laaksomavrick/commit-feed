@@ -13,6 +13,9 @@
 //        https://github.com/socketio/socket.io-redis
 //
 //        Or, presently, just assume one Node server + 1 Redis server for simplicity?
+//        Create a singleton class initialized with the IO object, call functions on it from controller?
+//        Later, this interface can broadcast to & listen to redis across multiple servers
+//        Later, can figure out how that works with clustering ;)
 
 const router = (middleware, io) => {
 
