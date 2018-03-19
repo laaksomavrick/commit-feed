@@ -29,12 +29,7 @@ const session_middleware = express_session({
     resave: true, 
     saveUninitialized: true
 })
-
-io.use((socket, next) => {
-  session_middleware(socket.request, socket.request.res, next) 
-})
-
-io.on('connection', socket_router)
+const socket = socket_router(session_middleware, io)
 
 app.use(cookie_parser())
 app.use(body_parser.urlencoded({ extended: true }))

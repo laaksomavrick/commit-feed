@@ -4,7 +4,7 @@ import express from 'express'
 import passport from 'passport'
 
 import { is_authenticated } from './auth/auth'
-import user_controller from './controllers/user'
+import UserController from './controllers/user'
 import ProjectController from './controllers/project'
 
 import UserQuery from './queries/user'
@@ -23,7 +23,7 @@ router.get('/heartbeat', async (req, res) => {
 })
 
 
-router.use('/user/current', user_controller.current)
+router.use('/user/current', UserController.current)
 
 router.get('/projects', ProjectController.index)
 

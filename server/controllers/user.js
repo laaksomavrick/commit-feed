@@ -1,10 +1,16 @@
-// controllers/user.js
+// controllers/project.js
 
-let controller = {}
+export default class UserController {
 
-controller.current = (req, res) => {
-  const user = req.user
-  res.send({ data: user })
+
+  static current = async (req, res, next) => {
+    try {
+      const user = req.user
+      res.send({ data: user })
+    } catch (e) {
+      next(e)
+    }
+  }
+
 }
 
-export default controller

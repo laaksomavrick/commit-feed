@@ -10,8 +10,20 @@ export default class SocketSingleton {
     if (this.instance) {
       return this.instance
     } else {
-      this.instance = io('http://localhost:3001')
+      this.instance = this.initialize_socket()
+      return this.instance
     }
+  }
+
+  // init socket
+  // attach event listeners
+  // TODO: better way to organize this?
+  initialize_socket() {
+    const socket = io('http://localhost:3001')
+    socket.on('test', (data) => {
+      console.log('test')
+    })
+    return socket
   }
 
 }

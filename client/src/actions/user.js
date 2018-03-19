@@ -2,6 +2,7 @@
 
 import { get } from '../utils/http.js'
 import { SET_USER } from '../constants/constants.js'
+import SocketSingleton from '../utils/socket.js'
 
 export const set_user = (new_state) => {
   return {
@@ -20,5 +21,16 @@ export const async_get_user = () => {
       .then(
         json => dispatch(set_user(json.data))
       )
+  }
+}
+
+//only here for example, don't use ATM
+export const get_user = () => {
+  const Socket = new SocketSingleton()
+  return dispatch => {
+    Socket.emit('api/user/current', {}, (err, data) => {
+      console.log(err)
+      console.log(data)
+    })
   }
 }
