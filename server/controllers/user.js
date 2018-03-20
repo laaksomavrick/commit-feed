@@ -2,11 +2,10 @@
 
 export default class UserController {
 
-
   static current = async (req, res, next) => {
     try {
-      const user = req.user
-      res.send({ data: user })
+      const data = req.user
+      res.send({ data })
     } catch (e) {
       next(e)
     }
