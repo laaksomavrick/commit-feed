@@ -5,7 +5,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import NavigationBar from '../NavigationBar/NavigationBar.js'
-import { async_get_user } from '../../actions/user.js'
+import { get_initial_data } from '../../actions/app.js'
 
 import './Home.css'
 
@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(async_get_user())
+    dispatch(get_initial_data())
   }
 
   http_heartbeat = () => {

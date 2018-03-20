@@ -5,13 +5,15 @@
 import { combineReducers } from 'redux'
 import authorized from './authorized.js'
 import user from './user.js'
+import projects from './projects.js'
 
 /*
  *
  *  {
  *    authorized: bool
  *    ui: { ... }
- *    user: { ... }
+ *    user: { ... },
+ *    projects: []
  *  }
  *
  */
@@ -19,7 +21,8 @@ import user from './user.js'
 
 const root_reducer = combineReducers({
   authorized,
-  user
+  user,
+  projects
 })
 
 export default root_reducer
