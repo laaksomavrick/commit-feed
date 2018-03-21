@@ -12,8 +12,8 @@ class NavigationBar extends React.Component {
 
   render() {
     const { projects } = this.props
-    const items = projects.map(project => 
-      <NavigationItem name={project.name}/>
+    const items = projects.map((project, index) => 
+      <NavigationItem key={index} name={project.name}/>
     )
     return (
       <div className="navigation-bar-container">

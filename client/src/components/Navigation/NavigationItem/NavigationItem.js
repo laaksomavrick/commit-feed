@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import './NavigationItem.css'
 
 const NavigationItem = ({ name }) => (
-  <div class="navigation-item-container">
-    <div class="name">
+  <div className="navigation-item-container">
+    <div className="name">
       { name }
     </div>
   </div>
