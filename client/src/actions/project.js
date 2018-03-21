@@ -22,14 +22,3 @@ export const get_projects = () => {
       )
   }
 }
-
-//only here for example, don't use ATM
-  /*export const get_user = () => {
-  const Socket = new SocketSingleton()
-  return dispatch => {
-    Socket.emit('api/user/current', {}, (err, data) => {
-      console.log(err)
-      console.log(data)
-    })
-  }
-}*/
