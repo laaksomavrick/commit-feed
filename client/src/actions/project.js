@@ -4,8 +4,6 @@ import { get } from '../utils/http.js'
 import { SET_PROJECTS } from '../constants/constants.js'
 
 export const set_projects = (new_state) => {
-  console.log("HERE")
-  console.log(new_state)
   return {
     type: SET_PROJECTS,
     new_state
