@@ -4,7 +4,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import NavigationBar from '../NavigationBar/NavigationBar.js'
+import NavigationBar from '../Navigation/NavigationBar/NavigationBar.js'
 import { get_initial_data } from '../../actions/app.js'
 
 import './Home.css'
@@ -26,14 +26,22 @@ class Home extends React.Component {
     .catch(err => console.log(err))
   }
 
+  //<button onClick={this.http_heartbeat}>http</button>
   render() {
     const state = this.props
+
+    const element = state.ui.home_loaded ? (
+      <NavigationBar />
+    ) : (
+      <div> Loading </div>
+    )
+
     return (
       <div className="home-container">
-        <NavigationBar />
-        <button onClick={this.http_heartbeat}>http</button>
+        { element }
       </div>
     )
+
   }
 
 }

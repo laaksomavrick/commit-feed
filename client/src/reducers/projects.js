@@ -8,7 +8,7 @@ const projects = (
 ) => {
   switch (action.type) {
     case SET_PROJECTS:
-      return Object.assign({}, state, action.new_state)
+      return Object.assign([], state, action.new_state)
     default: 
       return state
   }

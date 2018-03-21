@@ -12,7 +12,7 @@ export const set_user = (new_state) => {
 
 export const get_user = () => {
   return dispatch => {
-    get('user/current')
+    return get('user/current')
       .then(
         res => res.json(),
         err => console.log('Error in asyncGetUser:', err)

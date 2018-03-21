@@ -17,15 +17,14 @@ import './App.css'
 
 export default class App extends React.Component {
 
-  //TODO: socket; singleton; don't bother with http
+  // <Route exact path="/" component={() => <Redirect to="/home" />} /> 
 
   render() {
     return (
       <Router>
         <div className="app-container">
-          <Route exact path="/" component={() => <Redirect to="/home" />} /> 
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/home" component={Home} />
+          <PrivateRoute path="/" component={Home} />
         </div>
       </Router>
     )

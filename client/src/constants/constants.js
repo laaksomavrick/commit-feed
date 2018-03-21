@@ -8,4 +8,6 @@ export const SET_USER = 'SET_USER'
 
 export const SET_PROJECTS = 'SET_PROJECTS'
 
-// ui constants (todo)
+// ui constants
+
+export const SET_HOME_LOADED = 'SET_HOME_LOADED'
