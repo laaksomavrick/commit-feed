@@ -26,7 +26,6 @@ class Home extends React.Component {
     .catch(err => console.log(err))
   }
 
-  //<button onClick={this.http_heartbeat}>http</button>
   render() {
     const state = this.props
 
@@ -39,6 +38,7 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         { element }
+      <button onClick={this.http_heartbeat}>http</button>
       </div>
     )
 

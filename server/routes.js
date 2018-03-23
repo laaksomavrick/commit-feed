@@ -9,12 +9,22 @@ import RepoController from './controllers/repo'
 
 import UserQuery from './queries/user'
 
+import GithubSync from './services/github_sync'
+
 let router = express.Router()
 
 router.use(is_authenticated)
 
-router.get('/heartbeat', async (req, res) => {
+router.get('/heartbeat', async (req, res, next) => {
   try {
+
+
+    const client = new GithubSync(1)
+    const test = await client.call()
+    console.log("HERE")
+    console.log(test)
+
+
     const data = { alive: true, user: req.user, session: req.session }
     res.json(data)
   } catch (err) {

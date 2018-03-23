@@ -8,11 +8,13 @@
     "server": "nodemon server/index.js --exec babel-node",
     "client": "webpack-dev-server --hot --inline",
     "build": "babel app -d server/dist",
-    "serve": "node server/dist/index.js"
+    "serve": "node server/dist/index.js",
+    "repl": "node -r babel-register"
   },
   "author": "Mavrick Laakso",
   "license": "ISC",
   "dependencies": {
+    "@octokit/rest": "^15.2.5",
     "body-parser": "^1.18.2",
     "connect-ensure-login": "^0.1.1",
     "connect-redis": "^3.3.3",
