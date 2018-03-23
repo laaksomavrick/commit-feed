@@ -1,17 +1,17 @@
-// reducers/projects.js
+// reducers/repos.js
 
-import { SET_PROJECTS } from '../constants/constants.js'
+import { SET_REPOS } from '../constants/constants.js'
 
-const projects = (
+const repos = (
   state = [],
   action
 ) => {
   switch (action.type) {
-    case SET_PROJECTS:
+    case SET_REPOS:
       return Object.assign([], state, action.new_state)
     default: 
       return state
   }
 }
 
-export default projects
+export default repos

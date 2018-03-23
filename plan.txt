@@ -1,3 +1,12 @@
+Core product => Code review tool
+
+1. Need to import a user's github repos
+2. Need to be able to view view reviews (dashboard, main view); see google docs main
+2. Need to be able to search, add files from a repo to create a review
+3. Need to be able to view these files; see google docs doc view
+4. Need to be able to comment on specific code blocks, the files in general
+
+
 Core product -> Kanban Bug Tracker for Github repo
 
 => Review & Approval of Feature Development and Bug Tracking

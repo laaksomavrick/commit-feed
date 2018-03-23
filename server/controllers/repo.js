@@ -1,14 +1,14 @@
-// controllers/project.js
+// controllers/repo.js
 
 import UserQuery from '../queries/user'
 
-export default class ProjectController {
+export default class RepoController {
 
   static index = async (req, res, next) => {
     try {
       const id = req.user.id
       const query = new UserQuery()
-      const data = await query.find_projects(id)
+      const data = await query.find_repos(id)
       res.send({ data })
     } catch (e) {
       next(e)

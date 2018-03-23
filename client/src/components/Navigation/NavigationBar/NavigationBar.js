@@ -11,9 +11,9 @@ class NavigationBar extends React.Component {
   // List of projects
 
   render() {
-    const { projects } = this.props
-    const items = projects.map((project, index) => 
-      <NavigationItem key={index} name={project.name}/>
+    const { repos } = this.props
+    const items = repos.map((repo, index) => 
+      <NavigationItem key={index} name={repo.name}/>
     )
     return (
       <div className="navigation-bar-container">
@@ -25,7 +25,7 @@ class NavigationBar extends React.Component {
 }
 
 const map_state_to_props = state => {
-  return { projects: state.projects }
+  return { repos: state.repos }
 }
 
 export default connect(map_state_to_props)(NavigationBar)

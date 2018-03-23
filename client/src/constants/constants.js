@@ -4,9 +4,9 @@
 
 export const SET_USER = 'SET_USER'
 
-// project constants
+// repo constants
 
-export const SET_PROJECTS = 'SET_PROJECTS'
+export const SET_REPOS = 'SET_REPOS'
 
 // ui constants
 
