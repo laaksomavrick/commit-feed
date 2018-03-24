@@ -21,9 +21,6 @@ router.get('/heartbeat', async (req, res, next) => {
 
     const client = new GithubSync(1)
     const test = await client.call()
-    console.log("HERE")
-    console.log(test)
-
 
     const data = { alive: true, user: req.user, session: req.session }
     res.json(data)

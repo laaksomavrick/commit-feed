@@ -2,7 +2,7 @@
 
 import UserQuery from '../queries/user.js'
 
-const octokit = require('@octokit/rest')()
+const client = require('@octokit/rest')()
 
 export default class GithubClient {
 
@@ -18,7 +18,6 @@ export default class GithubClient {
     const query = new UserQuery()
     const user = await query.find_by_id(user_id)
     const access_token = user.access_token
-    const client = octokit
     client.authenticate({type: 'token', token: access_token})
     return client
   }

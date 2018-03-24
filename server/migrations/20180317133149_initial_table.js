@@ -11,8 +11,11 @@ exports.up = function(knex, Promise) {
       
     return knex.schema.createTable('repos', function(t) {
         t.increments().primary()
+        t.integer('external_id').notNullable()
         t.string('name').notNullable()
         t.text('description')
+        t.string('url').notNullable()
+        t.boolean('private').notNullable()
         t.timestamps(true, true)
     }).then(() => {
       
@@ -32,7 +35,7 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('user_projects').then(() => {
+  return knex.schema.dropTable('user_repos').then(() => {
     return knex.schema.dropTable('users').then(() => {
       return knex.schema.dropTable('repos')
     })

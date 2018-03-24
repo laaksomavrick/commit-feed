@@ -9,7 +9,7 @@
     "client": "webpack-dev-server --hot --inline",
     "build": "babel app -d server/dist",
     "serve": "node server/dist/index.js",
-    "repl": "node -r babel-register"
+    "repl": "npx babel-node "
   },
   "author": "Mavrick Laakso",
   "license": "ISC",

@@ -8,6 +8,7 @@
 // blah2.call()
 
 import GithubClient from './github_client'
+import RepoQuery from '../queries/repo'
 
 export default class GithubSync {
 
@@ -15,21 +16,24 @@ export default class GithubSync {
     this.user_id = user_id
   }
 
-  async call() {
-    const client = await this.get_client()
-    //TODO: get user repos
-    const repos = await client.repos.getForOrg({
-      org: 'octokit',
-      type: 'public'
+  call = async () => {
+    const client = await GithubClient.create(this.user_id)
+    const raw_repos = await client.repos.getAll({})
+    const db_repos = raw_repos.data.map(repo => {
+      return {
+        external_id: repo.id,
+        name: repo.full_name,
+        description: repo.description,
+        private: repo.private,
+        url: repo.url
+      }
     })
-    return repos
+
+    const query = new RepoQuery()
+    const success = query.sync(this.user_id, db_repos)
+    return success
   }
 
   // private
-
-  async get_client() {
-    return await GithubClient.create(this.user_id)
-  }
-  
 
 }

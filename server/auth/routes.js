@@ -7,7 +7,7 @@ import passport from 'passport'
 
 let router = express.Router()
 
-router.get('/github', passport.authenticate('github'))
+router.get('/github', passport.authenticate('github', { scope: 'repo' } ))
 
 router.get('/github/callback', 
   passport.authenticate('github', {

@@ -26,7 +26,7 @@ const router = (middleware, io) => {
 
   io.on('connection', socket => {
 
-    console.log(socket.request.session.passport.user)
+    //console.log(socket.request.session.passport.user)
 
     socket.on('hello world', message => {
       console.log("here")
