@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(get_initial_data())
+    //dispatch(get_initial_data())
   }
 
   http_heartbeat = () => {

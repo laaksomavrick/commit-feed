@@ -17,16 +17,9 @@
 //        Later, this interface can broadcast to & listen to redis across multiple servers
 //        Later, can figure out how that works with clustering ;)
 
-const router = (middleware, io) => {
-
-  io.use((socket, next) => {
-    middleware(socket.request, {}, next)
-  })
-
+const router = (io) => {
 
   io.on('connection', socket => {
-
-    //console.log(socket.request.session.passport.user)
 
     socket.on('hello world', message => {
       console.log("here")
@@ -34,7 +27,6 @@ const router = (middleware, io) => {
     })
 
     socket.on('api/user/current', (message, cb) => {
-      cb(null, socket.request.session.passport.user)
       socket.emit('test')
     })
 

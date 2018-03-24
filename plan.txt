@@ -1,39 +1,30 @@
-Core product => Code review tool
+In order to keep this A) simple and b) finishable
 
-1. Need to import a user's github repos
-2. Need to be able to view view reviews (dashboard, main view); see google docs main
-2. Need to be able to search, add files from a repo to create a review
-3. Need to be able to view these files; see google docs doc view
-4. Need to be able to comment on specific code blocks, the files in general
+*** A simple and stylish "activity feed" for a user's github repos ***
+
+--> Might be a cool idea for my personal page...?
+
+--> render repo | commit; on click, metadata
+--> Make it look really pretty & clean
+  -> Big text, smooth animation when adding new, random poppy, campy colors
 
 
-Core product -> Kanban Bug Tracker for Github repo
+--> On load, grab 5 latest
+--> Poll on backend; update db; send event to client on change
 
-=> Review & Approval of Feature Development and Bug Tracking
 
-Product flows
 
-Login -> Sync Github repos to projects y/n
+TASKS:
 
-Enter app
-  -> Dashboard
-    -> Squares with your repos
-	-> Repo
-		-> Refresh from source (GitHub); ie name change
-	-> Board
-		-> Search, filter by assignee; filter by tag
-		-> Support custom later; for now: todo, in progress, done
-	-> Cards | List (?)
-		-> Tag: Feature, Issue, Custom
-		-> Name
-		-> Description
-		-> Branch (default, master)
-		-> Discussion
-		-> Status (WIP | Completed)
-			-> Relevant commit; see changes
-	-> Activity Feed
-		=> https://developer.github.com/webhooks/#events"
-		-> Commits
-		-> Discussions
-		-> New features
-		-> New issues
+  Get all push events for a user
+  Save in db
+    Wrap in generic activity class; may want to ie add blog posts later
+  Create smart poller
+  Create notifier for new event; save new events in db
+
+  Render them pretty
+
+  Remove login / user system, use this as a personal site?
+
+  Integrate functionality for blog posts: integrate functionality for stack overflow answers; ???
+  Cool if commit colors corresponded to github colors for th elanguage
