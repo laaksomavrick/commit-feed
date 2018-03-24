@@ -17,11 +17,6 @@ router.use(is_authenticated)
 
 router.get('/heartbeat', async (req, res, next) => {
   try {
-
-
-    const client = new GithubSync(1)
-    const test = await client.call()
-
     const data = { alive: true, user: req.user, session: req.session }
     res.json(data)
   } catch (err) {
@@ -33,6 +28,7 @@ router.get('/heartbeat', async (req, res, next) => {
 router.use('/user/current', UserController.current)
 
 router.get('/repos', RepoController.index)
+router.get('/repos/sync', RepoController.sync)
 
 
 export default router

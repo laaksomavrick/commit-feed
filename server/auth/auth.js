@@ -2,6 +2,7 @@
 
 import github from 'passport-github'
 import UserQuery from '../queries/user'
+import GithubSync from '../services/github_sync'
 
 export const strategy = () => {
 
@@ -23,6 +24,8 @@ export const strategy = () => {
 
     const User = new UserQuery()
     const user = await User.create_or_update(conditions, obj)
+    const Syncer = new GithubSync(user.id)
+    await Syncer.call()
 
     return cb(null, user)
 

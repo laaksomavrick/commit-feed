@@ -30,10 +30,8 @@ export default class GithubSync {
     })
 
     const query = new RepoQuery()
-    const success = query.sync(this.user_id, db_repos)
+    const success = await query.sync(this.user_id, db_repos)
     return success
   }
-
-  // private
 
 }
