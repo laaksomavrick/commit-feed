@@ -1,6 +1,5 @@
 // controllers/repo.js
 
-import UserQuery from '../queries/user'
 import GithubSync from '../services/github_sync'
 
 export default class RepoController {

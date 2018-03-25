@@ -28,3 +28,6 @@ TASKS:
 
   Integrate functionality for blog posts: integrate functionality for stack overflow answers; ???
   Cool if commit colors corresponded to github colors for th elanguage
+
+  Really don't *need* to be real time, but would be cool
+  SSR would be nice though if using this for a personal page
