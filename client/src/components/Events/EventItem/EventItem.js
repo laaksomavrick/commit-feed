@@ -2,18 +2,19 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import { event_title } from '../../../utils/event'
 import './EventItem.css'
 
-const EventItem = ({ name }) => (
+const EventItem = ({ event }) => (
   <div className="event-item-container">
-    <div className="name">
-      { name }
+    <div className="title">
+      { event_title(event) }
     </div>
   </div>
 )
 
 EventItem.propTypes = {
-  name: PropTypes.string.isRequired
+  event: PropTypes.object.isRequired
 }
 
 export default EventItem

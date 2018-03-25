@@ -8,8 +8,9 @@ export default class Query {
     this.TABLE = table
   }
 
-  get = async (select, order) => {
-    const rows = await db.select().from(this.TABLE).orderBy('id', 'desc')
+  get = async (select, order, limit) => {
+    //TODO: make this generic using input params if necessary
+    const rows = await db.select().from(this.TABLE).orderBy('id', 'desc').limit(5)
     return rows
   }
 
