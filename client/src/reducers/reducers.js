@@ -3,27 +3,21 @@
 // reducers/reducers.js
 
 import { combineReducers } from 'redux'
-import authorized from './authorized.js'
-import user from './user.js'
-import repos from './repos.js'
+import events from './events.js'
 import ui from './ui.js'
 
 /*
  *
  *  {
- *    authorized: bool
  *    ui: { ... }
- *    user: { ... },
- *    repos: []
+ *    events: []
  *  }
  *
  */
 
 
 const root_reducer = combineReducers({
-  authorized,
-  user,
-  repos,
+  events,
   ui
 })
 

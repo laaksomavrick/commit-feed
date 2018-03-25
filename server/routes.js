@@ -1,19 +1,13 @@
 // routes.js
 
 import express from 'express'
-
-import RepoController from './controllers/repo'
-
-import GithubSync from './services/github_sync'
+import EventController from './controllers/event'
 
 let router = express.Router()
 
 router.get('/heartbeat', async (req, res, next) => {
   try {
-
-    const client = new GithubSync()
-    const test = await client.call()
-
+    //TODO: remove when dev is done
     const data = { alive: true }
     res.json(data)
   } catch (err) {
@@ -21,7 +15,7 @@ router.get('/heartbeat', async (req, res, next) => {
   }
 })
 
-//router.get('/repos', RepoController.index)
+router.get('/events', EventController.index)
 
 
 export default router

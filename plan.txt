@@ -20,14 +20,14 @@ TASKS:
   Save in db
     Wrap in generic activity class; may want to ie add blog posts later
   Create smart poller
-  Create notifier for new event; save new events in db
+  Create notifier for new event to client? sockets; nice-to-have
+  // can use polling if lazy
 
   Render them pretty
-
-  Remove login / user system, use this as a personal site?
 
   Integrate functionality for blog posts: integrate functionality for stack overflow answers; ???
   Cool if commit colors corresponded to github colors for th elanguage
 
   Really don't *need* to be real time, but would be cool
   SSR would be nice though if using this for a personal page
+  "Right now I'm probably doing X, based on the time of day locally"

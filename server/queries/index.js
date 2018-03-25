@@ -8,6 +8,11 @@ export default class Query {
     this.TABLE = table
   }
 
+  get = async (select, order) => {
+    const rows = await db.select().from(this.TABLE).orderBy('id', 'desc')
+    return rows
+  }
+
   create_or_update = async (conditions, obj) => {
     const exists = await this.find(conditions)
     if (exists) {
