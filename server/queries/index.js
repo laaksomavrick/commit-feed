@@ -13,6 +13,11 @@ export default class Query {
     return rows
   }
 
+  get_where_in = async (fk, ids) => {
+    const rows = await db.select().from(this.TABLE).whereIn(fk, ids)
+    return rows
+  }
+
   create_or_update = async (conditions, obj) => {
     const exists = await this.find(conditions)
     if (exists) {
