@@ -1,9 +1,18 @@
 body {
   margin: 0;
-  background: #f6f7fa;
+  background: #f6f6f6;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
 }
 
 .app-container {
+  margin: auto;
   height: 100vh;
-  width: 100vw;
+  max-width: 1200px;
+  width: 100%;
 }
