@@ -51,7 +51,7 @@ export default class GithubSync {
           url: commit.url
         }
 
-        const commit_record = await commit_query.create_or_update({url: commit_obj.url}, commit_obj)
+        const commit_record = await commit_query.create_or_update({url: commit_obj.url, message: commit_obj.message}, commit_obj)
 
       })
 

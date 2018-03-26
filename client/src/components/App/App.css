@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   margin: 0;
   background: #f6f6f6;
   min-height: 100vh;
