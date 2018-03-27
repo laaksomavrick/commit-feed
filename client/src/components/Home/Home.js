@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import EventList from '../Events/EventList/EventList.js'
 import { get_initial_data } from '../../actions/app.js'
 
+import Hero from '../Hero/Hero.js'
+
 import './Home.css'
 
 class Home extends React.Component {
@@ -19,9 +21,11 @@ class Home extends React.Component {
   render() {
     const state = this.props
 
-    const element = state.ui.home_loaded ? (
+    //TODO: remove loading toggle when SSR implemented
+    const element = state.ui.home_loaded ? ([
+      <Hero />,
       <EventList />
-    ) : (
+    ]) : (
       <div> Loading </div>
     )
 

@@ -1,6 +1,6 @@
-.event-list-container {
+.hero-container {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: blue;
   flex: 1;
 }

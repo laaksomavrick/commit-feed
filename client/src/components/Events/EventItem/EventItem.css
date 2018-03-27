@@ -1,5 +1,10 @@
 .event-item-container {
+  cursor: pointer;
+  margin: 2px;
 }
 .title {
   font-size: 28px;
+}
+.hidden {
+  display: none;
 }
