@@ -9,7 +9,13 @@ class Hero extends React.Component {
 
     return (
       <div className="hero-container">
-        <h1>Mavrick Laakso</h1>
+        <div className="hero-title">
+          <h1>Something catchy,</h1>
+          <h1>blah blah blah blah.</h1>
+        </div>
+        <div className="hero-detail">
+          <p> A little blurb about me, something flattering and truthful. JavaScript redux rockstar ninja.</p>
+        </div>
       </div>
     )
 

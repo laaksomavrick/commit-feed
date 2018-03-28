@@ -1,6 +1,10 @@
 .event-list-container {
   display: flex;
   flex-direction: column;
-  background: white;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: #fcfcfc;
+  background: #4b636e;
+
 }
