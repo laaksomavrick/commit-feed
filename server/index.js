@@ -10,6 +10,7 @@ import http from 'http'
 import socket_router from './socket'
 import db from './database/db'
 import api_routes from './routes'
+import GithubPoller from './services/github_poller'
 
 const _ = dotenv.config()
 const app = express()
@@ -40,6 +41,9 @@ db.raw('SELECT 1+1 as result')
     console.log(`Running database on ${process.env.DB_USER}@${process.env.DB_HOST}`)
     server.listen(process.env.EXPRESS_PORT, process.env.EXPRESS_HOST)
     console.log(`Running server on http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`)
+    const poller = new GithubPoller()
+    poller.call()
+    console.log(`Poller initialized`)
   })
   .catch(err => {
     console.log(`Error connecting database: \n, ${err}`) 
