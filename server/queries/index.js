@@ -9,8 +9,8 @@ export default class Query {
   }
 
   get = async (select, order, limit) => {
-    //TODO: make this generic using input params if necessary
-    const rows = await db.select().from(this.TABLE).orderBy('id', 'desc').limit(5)
+    //TODO: make this generic for order; limit; etc
+    const rows = await db.select().from(this.TABLE).orderBy('external_id', 'desc').limit(2)
     return rows
   }
 
@@ -21,6 +21,7 @@ export default class Query {
 
   create_or_update = async (conditions, obj) => {
     const exists = await this.find(conditions)
+    console.log(exists)
     if (exists) {
       return this.update(conditions, obj)
     } else {

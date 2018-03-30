@@ -15,7 +15,12 @@ class EventList extends React.Component {
     )
     return (
       <div className="event-list-container">
-        {items}
+        <div className="event-list-title">
+          <h1>Recent activity:</h1>
+        </div>
+        <div className="event-list-detail">
+          {items}
+        </div>
       </div>
     )
   }

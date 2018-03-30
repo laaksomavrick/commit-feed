@@ -5,6 +5,17 @@
   align-items: center;
   justify-content: center;
   color: #fcfcfc;
-  background: #4b636e;
-
+  background: linear-gradient(180deg, #5328C7, #3A09BF);
 }
+
+.event-list-title {
+  padding: 4em 4em 0 4em;
+  width: 20em;
+}
+
+.event-list-detail {
+  padding: 0 4em 4em 4em;
+  width: 20em;
+  margin-left: 15px;
+}
+
