@@ -1,4 +1,13 @@
 // constants.js
 
-export const SET_EVENTS = 'SET_EVENTS'
+// user constants
+
+export const SET_USER = 'SET_USER'
+
+// repo constants
+
+export const SET_REPOS = 'SET_REPOS'
+
+// ui constants
+
 export const SET_HOME_LOADED = 'SET_HOME_LOADED'

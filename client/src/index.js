@@ -7,9 +7,6 @@ import { createLogger } from 'redux-logger'
 
 import RootReducer from './reducers/reducers'
 import App from './components/App/App.js'
-import Socket from './utils/socket.js'
-
-const socket = new Socket()
 
 export const store = createStore(
   RootReducer,

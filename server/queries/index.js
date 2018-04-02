@@ -8,20 +8,8 @@ export default class Query {
     this.TABLE = table
   }
 
-  get = async (select, order, limit) => {
-    //TODO: make this generic for order; limit; etc
-    const rows = await db.select().from(this.TABLE).orderBy('external_id', 'desc').limit(2)
-    return rows
-  }
-
-  get_where_in = async (fk, ids) => {
-    const rows = await db.select().from(this.TABLE).whereIn(fk, ids)
-    return rows
-  }
-
   create_or_update = async (conditions, obj) => {
     const exists = await this.find(conditions)
-    console.log(exists)
     if (exists) {
       return this.update(conditions, obj)
     } else {

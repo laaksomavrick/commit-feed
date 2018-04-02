@@ -1,25 +1,30 @@
 // routes.js
 
 import express from 'express'
-import EventController from './controllers/event'
+import passport from 'passport'
 
-import GithubSync from './services/github_sync'
+import { is_authenticated } from './auth/auth'
+import UserController from './controllers/user'
+import BoardController from './controllers/board'
+
+import UserQuery from './queries/user'
 
 let router = express.Router()
 
+router.use(is_authenticated)
+
 router.get('/heartbeat', async (req, res, next) => {
   try {
-    //TODO: remove when dev is done
-    const test = new GithubSync()
-    test.call()
-    const data = { alive: true }
+    const data = { alive: true, user: req.user, session: req.session }
     res.json(data)
   } catch (err) {
     next(err)
   }
 })
 
-router.get('/events', EventController.index)
 
+router.use('/user/current', UserController.current)
+
+router.get('/boards', BoardController.index)
 
 export default router
