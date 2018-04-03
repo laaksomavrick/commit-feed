@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import NavigationItem from '../NavigationItem/NavigationItem.js'
 import './NavigationBar.css'
 
 class NavigationBar extends React.Component {
@@ -11,13 +10,12 @@ class NavigationBar extends React.Component {
   // List of projects
 
   render() {
-    const { repos } = this.props
-    const items = repos.map((repo, index) => 
-      <NavigationItem key={index} name={repo.name}/>
-    )
+    //const { repos } = this.props
+    //const items = repos.map((repo, index) => 
+    //  <NavigationItem key={index} name={repo.name}/>
+    //)
     return (
-      <div className="navigation-bar-container">
-        {items}
+      <div className="navigation-bar">
       </div>
     )
   }

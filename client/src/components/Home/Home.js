@@ -4,7 +4,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import NavigationBar from '../Navigation/NavigationBar/NavigationBar.js'
+import NavigationBar from '../NavigationBar/NavigationBar.js'
 import { get_initial_data } from '../../actions/app.js'
 
 import './Home.css'
@@ -27,8 +27,8 @@ class Home extends React.Component {
   }
 
   render() {
+    // SSR will remove the need for loading at some point
     const state = this.props
-
     const element = state.ui.home_loaded ? (
       <NavigationBar />
     ) : (

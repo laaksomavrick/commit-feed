@@ -1,7 +1,7 @@
-.navigation-bar-container {
-  width: 250px;
+.navigation-bar {
+  width: 100%;
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  background: white;
+  background: blue;
   box-shadow: 0 0 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
 }
