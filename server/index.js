@@ -19,10 +19,11 @@ const app = express()
 const session_store = connect_redis(express_session) //TODO: should redis have some sort of .env config?
 const server = http.Server(app)
 const session_middleware = express_session({ 
-    store: new session_store,
-    secret: process.env.EXPRESS_SESSION_SECRET, 
-    resave: true, 
-    saveUninitialized: true
+  store: new session_store,
+  secret: process.env.EXPRESS_SESSION_SECRET, 
+  resave: true, 
+  saveUninitialized: true,
+  cookie: { expires: new Date(2147483647000) }
 })
 
 app.use(cookie_parser())
