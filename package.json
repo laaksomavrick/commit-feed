@@ -23,6 +23,8 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "knex": "^0.14.4",
+    "material-ui": "^1.0.0-beta.40",
+    "material-ui-icons": "^1.0.0-beta.36",
     "mysql2": "^1.5.2",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
