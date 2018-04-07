@@ -5,9 +5,8 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Redirect,
-  withRouter
+  Switch
 } from 'react-router-dom'
 
 import PrivateRoute from '../PrivateRoute.js'
@@ -17,14 +16,16 @@ import './App.css'
 
 export default class App extends React.Component {
 
-
   render() {
     return (
       <Router>
         <div className="app-container">
-          <Route path="/login" component={Login} />
-          <Route exact path="/" component={() => <Redirect to="/home" />} /> 
-          <PrivateRoute path="/home" component={Home} />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <PrivateRoute path="/app" component={Home} />
+            <Route exact path="/" component={() => <Redirect to="/app" />} /> 
+            <Route path="/*" component={() => <Redirect to="/" />} /> 
+          </Switch>
         </div>
       </Router>
     )

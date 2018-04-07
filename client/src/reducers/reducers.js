@@ -4,9 +4,8 @@
 
 import { combineReducers } from 'redux'
 import authorized from './authorized.js'
-import user from './user.js'
-import repos from './repos.js'
 import ui from './ui.js'
+import user from './user.js'
 
 /*
  *
@@ -14,7 +13,6 @@ import ui from './ui.js'
  *    authorized: bool
  *    ui: { ... }
  *    user: { ... },
- *    repos: []
  *  }
  *
  */
@@ -22,9 +20,8 @@ import ui from './ui.js'
 
 const root_reducer = combineReducers({
   authorized,
-  user,
-  repos,
-  ui
+  ui,
+  user
 })
 
 export default root_reducer
