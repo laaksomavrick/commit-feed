@@ -3,10 +3,10 @@
 import db from '../database/db'
 import Query from './'
 
-export default class UserQuery extends Query {
+export default class BoardQuery extends Query {
 
   constructor() {
-    super("users")
+    super("boards")
   }
 
 }

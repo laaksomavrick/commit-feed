@@ -6,6 +6,7 @@ import { combineReducers } from 'redux'
 import authorized from './authorized.js'
 import ui from './ui.js'
 import user from './user.js'
+import boards from './board.js'
 
 /*
  *
@@ -13,6 +14,7 @@ import user from './user.js'
  *    authorized: bool
  *    ui: { ... }
  *    user: { ... },
+ *    boards: []
  *  }
  *
  */
@@ -21,7 +23,8 @@ import user from './user.js'
 const root_reducer = combineReducers({
   authorized,
   ui,
-  user
+  user,
+  boards
 })
 
 export default root_reducer
