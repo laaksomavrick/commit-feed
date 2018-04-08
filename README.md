@@ -1,3 +1,3 @@
 # commit-feed
 
-Current WIP
+Current WIP; a material design Trello clone using React, Redux, Express and MySQL.
