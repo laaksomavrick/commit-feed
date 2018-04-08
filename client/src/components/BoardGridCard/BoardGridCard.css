@@ -1,0 +1,7 @@
+.board-grid-card-container {
+  cursor: pointer;
+}
+
+.board-grid-card-container div {
+  transition: box-shadow 0.2s;
+}
