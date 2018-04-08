@@ -17,8 +17,13 @@ export default class Query {
     }
   }
 
-  find = async (conditions) => {
+  first = async (conditions) => {
     const record = await db.table(this.TABLE).where(conditions).first()
+    return record !== undefined ? record : null
+  }
+
+  find = async (conditions) => {
+    const record = await db.table(this.TABLE).where(conditions)
     return record !== undefined ? record : null
   }
 

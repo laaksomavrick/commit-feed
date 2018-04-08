@@ -11,15 +11,7 @@ import './NavigationBar.css'
 
 class NavigationBar extends React.Component {
 
-  //TODO Dashboard
-  // List of projects
-
   render() {
-    //const { repos } = this.props
-    //const items = repos.map((repo, index) => 
-    //  <NavigationItem key={index} name={repo.name}/>
-    //)
-
     return (
       <AppBar position="static">
         <Toolbar>
