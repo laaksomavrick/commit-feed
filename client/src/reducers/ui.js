@@ -1,10 +1,14 @@
 // reducers/ui.js
 
-import { SET_HOME_LOADED } from '../constants/constants.js'
+import { 
+  SET_HOME_LOADED,
+  SET_ADD_BOARD_MODAL_OPEN
+} from '../constants/constants.js'
 
 const ui = (
   state = {
-    home_loaded: false
+    home_loaded: false,
+    add_board_modal_open: false
   },
   action
 ) => {
@@ -12,6 +16,10 @@ const ui = (
     case SET_HOME_LOADED:
       return Object.assign({}, state, {
         home_loaded: action.new_state
+      })
+    case SET_ADD_BOARD_MODAL_OPEN:
+      return Object.assign({}, state, {
+        add_board_modal_open: action.new_state
       })
     default: 
       return state

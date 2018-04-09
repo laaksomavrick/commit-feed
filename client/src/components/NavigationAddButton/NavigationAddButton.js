@@ -1,15 +1,21 @@
 // NavigationAddButton / NavigationAddButton.js
 
 import React from 'react'
+import { connect } from 'react-redux'
 
 import AddCircleIcon from 'material-ui-icons/AddCircle'
 import IconButton from 'material-ui/IconButton'
 import Menu, { MenuItem } from 'material-ui/Menu'
 
+import { set_add_board_modal_open } from '../../actions/ui.js'
+
 class NavigationAddButton extends React.Component {
 
-  state = {
-    anchor_el: null
+  constructor(props) {
+    super(props)
+    this.state = {
+      anchor_el: null
+    }
   }
 
   handle_add_click = e => {
@@ -17,7 +23,9 @@ class NavigationAddButton extends React.Component {
   }
 
   handle_add_close = () => {
+    const { dispatch } = this.props
     this.setState({ anchor_el: null })
+    dispatch(set_add_board_modal_open(true))
   }
 
   render() {
@@ -50,4 +58,4 @@ class NavigationAddButton extends React.Component {
 
 }
 
-export default NavigationAddButton
+export default connect()(NavigationAddButton)

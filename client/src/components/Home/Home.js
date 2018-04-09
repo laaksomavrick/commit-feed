@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 import NavigationBar from '../NavigationBar/NavigationBar.js'
 import BoardGrid from '../BoardGrid/BoardGrid.js'
+import AddBoardModal from '../AddBoardModal/AddBoardModal.js'
 import { get_initial_data } from '../../actions/app.js'
 
 import './Home.css'
@@ -26,6 +27,7 @@ class Home extends React.Component {
       <div className="home-container">
         <NavigationBar />
         <BoardGrid />
+        <AddBoardModal />
       </div>
     ) : (
       <div> Loading </div>
