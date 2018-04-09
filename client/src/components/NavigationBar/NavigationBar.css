@@ -1,2 +1,6 @@
-.navigation-bar {
+.navigation-bar-container {
+}
+
+.navigation-bar-container .title {
+  flex-grow: 1;
 }

@@ -27,6 +27,8 @@ class BoardGridCard extends React.Component {
 
   render() {
 
+    //add an onclick prop
+
     const { board } = this.props
     const { raised } = this.state
 
