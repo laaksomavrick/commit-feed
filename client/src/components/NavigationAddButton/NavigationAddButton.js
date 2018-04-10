@@ -22,10 +22,14 @@ class NavigationAddButton extends React.Component {
     this.setState({ anchor_el: e.currentTarget })
   }
 
-  handle_add_close = () => {
+  handle_add_select = () => {
     const { dispatch } = this.props
     this.setState({ anchor_el: null })
     dispatch(set_add_board_modal_open(true))
+  }
+
+  handle_add_close = () => {
+    this.setState({ anchor_el: null })
   }
 
   render() {
@@ -49,7 +53,7 @@ class NavigationAddButton extends React.Component {
           open={open}
           onClose={this.handle_add_close}
         >
-          <MenuItem onClick={this.handle_add_close}>Add new board</MenuItem>
+          <MenuItem onClick={this.handle_add_select}>Add new board</MenuItem>
         </Menu>
       </div>
     )

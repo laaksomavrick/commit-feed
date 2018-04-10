@@ -6,7 +6,7 @@ export default class BoardController {
 
   static index = async (req, res, next) => {
     try {
-      const user_id = req.user.id
+      const user_id = req.user.id || req.user[0].id // wtf?
       const query = new BoardQuery()
       let data = await query.find({user_id})
       data = data === null ? [] : data
