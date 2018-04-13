@@ -34,13 +34,15 @@ class AddBoardModal extends React.Component {
     const error = this.check_and_set_error()
     if (!error) {
       console.log("todo")
+      console.log(this.state.value)
     }
   }
 
   handle_change = (e) => {
     const value = e.target.value
-    this.check_and_set_error()
-    this.setState({ value })
+    this.setState({ value }, () => {
+      this.check_and_set_error()
+    })
   }
 
   reset = () => {
