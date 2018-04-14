@@ -13,6 +13,7 @@ import Dialog, {
 } from 'material-ui/Dialog'
 
 import { set_add_board_modal_open } from '../../actions/ui.js'
+import { create_board } from '../../actions/board.js'
 
 import './AddBoardDialog.css'
 
@@ -33,8 +34,12 @@ class AddBoardModal extends React.Component {
   handle_create = () => {
     const error = this.check_and_set_error()
     if (!error) {
-      console.log("todo")
-      console.log(this.state.value)
+      const { dispatch } = this.props
+      const id = 0 //TODO make this smarter/generic
+      const name = this.state.value
+      const board = { id, name }
+      dispatch(create_board(board))
+      this.handle_close()
     }
   }
 

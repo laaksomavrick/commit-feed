@@ -26,5 +26,6 @@ router.get('/heartbeat', async (req, res, next) => {
 router.use('/user/current', UserController.current)
 
 router.get('/boards', BoardController.index)
+router.post('/boards', BoardController.create)
 
 export default router

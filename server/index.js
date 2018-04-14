@@ -28,6 +28,7 @@ const session_middleware = express_session({
 
 app.use(cookie_parser())
 app.use(body_parser.urlencoded({ extended: true }))
+app.use(body_parser.json())
 app.use(session_middleware)
 
 passport.use(new auth_service.strategy)

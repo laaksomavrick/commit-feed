@@ -34,13 +34,13 @@ export default class Query {
 
   create = async (obj) => {
     const rows = await db.table(this.TABLE).insert(obj)
-    const record = this.find(obj)
+    const record = this.first(obj)
     return record !== undefined ? record : null
   }
 
   update = async (conditions, obj) => {
     const rows = await db.table(this.TABLE).where(conditions).update(obj)
-    const record = this.find(conditions)
+    const record = this.first(conditions)
     return record !== undefined ? record : null
   }
 

@@ -1,7 +1,25 @@
 // actions/board.js
 
-import { get } from '../utils/http.js'
-import { SET_BOARDS } from '../constants/constants.js'
+import { get, post } from '../utils/http.js'
+import { 
+  SET_BOARDS,
+  ADD_BOARD,
+  UPDATE_BOARD
+} from '../constants/constants.js'
+
+export const add_board = (new_state) => {
+  return {
+    type: ADD_BOARD,
+    new_state
+  }
+}
+
+export const update_board = (new_state) => {
+  return {
+    type: UPDATE_BOARD,
+    new_state
+  }
+}
 
 export const set_boards = (new_state) => {
   return {
@@ -19,6 +37,20 @@ export const get_boards = () => {
       )
       .then(
         json => dispatch(set_boards(json.data))
+      )
+  }
+}
+
+export const create_board = (board) => {
+  return dispatch => {
+    dispatch(add_board(board))
+    return post('boards', board)
+      .then(
+        res => res.json(),
+        err => console.err('Error in create_board:', err)
+      )
+      .then(
+        json => dispatch(update_board(json))
       )
   }
 }
