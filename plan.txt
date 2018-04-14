@@ -1,1 +1,2 @@
-fix css for card (grid)
+"boards" header
+starring boards

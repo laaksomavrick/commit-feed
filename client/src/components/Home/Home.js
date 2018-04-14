@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import NavigationBar from '../NavigationBar/NavigationBar.js'
 import BoardGrid from '../BoardGrid/BoardGrid.js'
 import AddBoardDialog from '../AddBoardDialog/AddBoardDialog.js'
+import SideBar from '../SideBar/SideBar.js'
 import { get_initial_data } from '../../actions/app.js'
 
 import './Home.css'
@@ -26,6 +27,7 @@ class Home extends React.Component {
     const element = state.ui.home_loaded ? (
       <div className="home-container">
         <NavigationBar />
+        <SideBar />
         <BoardGrid />
         <AddBoardDialog />
       </div>
