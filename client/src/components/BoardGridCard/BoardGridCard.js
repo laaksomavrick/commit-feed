@@ -10,35 +10,16 @@ import './BoardGridCard.css'
 
 class BoardGridCard extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      raised: false
-    }
-  }
-
-  onMouseEnter = () => {
-    this.setState({ raised: true })
-  }
-
-  onMouseLeave = () => {
-    this.setState({ raised: false })
-  }
 
   render() {
 
     //add an onclick prop
 
     const { board } = this.props
-    const { raised } = this.state
 
     return (
-      <div className="board-grid-card-container">
-        <Card 
-          raised={raised}
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-        >
+      <div className="board-grid-card">
+        <Card>
           <CardContent>
             <Typography variant="headline" component="h2">
               {board.name}

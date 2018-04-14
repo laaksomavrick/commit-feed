@@ -16,7 +16,7 @@ class BoardGrid extends React.Component {
     )
 
     return (
-      <div className="board-grid-container">
+      <div className="board-grid">
         {items}
       </div>
     )

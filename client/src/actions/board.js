@@ -50,7 +50,7 @@ export const create_board = (board) => {
         err => console.err('Error in create_board:', err)
       )
       .then(
-        json => dispatch(update_board(json))
+        json => dispatch(update_board(json.data))
       )
   }
 }

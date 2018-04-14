@@ -1,6 +1,10 @@
-.board-grid-container {
+.board-grid {
   display: grid;
-  padding: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  grid-gap: 1rem;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-gap: 20px;
+
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
 }
