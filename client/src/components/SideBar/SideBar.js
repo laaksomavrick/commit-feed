@@ -53,13 +53,29 @@ class SideBar extends React.Component {
         >
           <List 
             className="side-bar__list"
-            subheader={<ListSubHeader component="div">Boards</ListSubHeader>}
+            subheader={
+              <ListSubHeader 
+                component="div"
+                disableSticky={true}
+                className="side-bar__sub-header"
+              >
+                  Boards
+                </ListSubHeader>
+            }
           >
             {content}    
           </List>
           <Divider />
           <List
-            subheader={<ListSubHeader component="div">Actions</ListSubHeader>}
+            subheader={
+              <ListSubHeader 
+                component="div" 
+                disableSticky={true}
+                className="side-bar__sub-header"
+              >
+                Actions
+              </ListSubHeader>
+            }
           >
             {actions}
           </List>

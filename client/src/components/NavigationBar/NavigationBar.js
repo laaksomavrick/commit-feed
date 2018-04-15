@@ -25,13 +25,13 @@ class NavigationBar extends React.Component {
 
   render() {
     return (
-      <div className="navigation-bar-container">
+      <div className="nav-bar">
         <AppBar position="static">
           <Toolbar>
             <IconButton color="inherit" onClick={this.handle_menu_click}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit">
+            <Typography className="nav-bar__title" variant="title" color="inherit">
               React Kanban
             </Typography>
             <SearchBar/>

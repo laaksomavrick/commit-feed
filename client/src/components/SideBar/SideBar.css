@@ -5,3 +5,7 @@
 .side-bar__list {
   width: 250px;
 }
+
+.side-bar__sub-header {
+  font-size: 1rem!important;
+}

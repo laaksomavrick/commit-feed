@@ -1,6 +1,10 @@
-.navigation-bar-container {
+.nav-bar__title {
+  flex-grow: 1;
 }
 
-.navigation-bar-container .title {
-  flex-grow: 1;
+/* 414 => Iphone 6/7/8 Plus */
+@media screen and (max-width: 414px) {
+  .nav-bar__title {
+    display: none!important;
+  }
 }
