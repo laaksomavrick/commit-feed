@@ -1,10 +1,21 @@
 .board-grid {
-  display: grid;
   padding: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-  grid-gap: 20px;
-
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
+}
+
+.board-grid > *:first-child {
+  margin-bottom: 20px;
+}
+
+.board-grid__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-gap: 20px;
+}
+
+.board-grid__header h2 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1.5rem;
 }

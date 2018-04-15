@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import BoardGridCard from '../BoardGridCard/BoardGridCard.js'
+import Typography from 'material-ui/Typography'
 
 import './BoardGrid.css'
 
@@ -17,7 +18,12 @@ class BoardGrid extends React.Component {
 
     return (
       <div className="board-grid">
-        {items}
+        <div className="board-grid__header">
+          <Typography variant="headline" component="h2">Boards</Typography>
+        </div>
+        <div className="board-grid__items">
+          {items}
+        </div>
       </div>
     )
 
