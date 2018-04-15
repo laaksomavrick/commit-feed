@@ -1,0 +1,43 @@
+/* !important necessary to override framework styling with pure css; not recommended best practice */
+
+.nav-search-bar {
+  width: 20%;
+  margin-left: auto!important;
+  background: rgba(255,255,255,0.1);
+  border-radius:2px;
+  transition: background 0.2s;
+}
+
+.nav-search-bar:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.nav-search-bar div {
+  color: white;
+}
+
+.nav-search-bar div div {
+  /* adornment */
+  margin-left: 10px;
+}
+
+.nav-search-bar div:hover:before {
+  background-color: transparent!important;  
+}
+
+.nav-search-bar div:before {
+  background-color: transparent;
+}
+
+.nav-search-bar div::before {
+  background-color: transparent;
+}
+
+
+.nav-search-bar div:after {
+  background-color: transparent;
+}
+
+.nav-search-bar div::after {
+  background-color: transparent;
+}

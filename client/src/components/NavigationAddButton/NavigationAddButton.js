@@ -9,6 +9,8 @@ import Menu, { MenuItem } from 'material-ui/Menu'
 
 import { set_add_board_modal_open } from '../../actions/ui.js'
 
+import './NavigationAddButton.css'
+
 class NavigationAddButton extends React.Component {
 
   constructor(props) {
@@ -38,7 +40,7 @@ class NavigationAddButton extends React.Component {
     const open = Boolean(anchor_el)
 
     return (
-      <div>
+      <div className="navigation-add-btn">
         <IconButton 
           color="inherit"
           onClick={this.handle_add_click}

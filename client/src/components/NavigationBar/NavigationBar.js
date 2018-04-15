@@ -10,6 +10,7 @@ import MenuIcon from 'material-ui-icons/Menu'
 import Typography from 'material-ui/Typography'
 
 import NavigationAddButton from '../NavigationAddButton/NavigationAddButton.js'
+import SearchBar from '../SearchBar/SearchBar.js'
 
 import { set_sidebar_open } from '../../actions/ui.js'
 
@@ -30,9 +31,10 @@ class NavigationBar extends React.Component {
             <IconButton color="inherit" onClick={this.handle_menu_click}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" className="title">
+            <Typography variant="title" color="inherit">
               React Kanban
             </Typography>
+            <SearchBar/>
             <NavigationAddButton />
           </Toolbar>
         </AppBar>
