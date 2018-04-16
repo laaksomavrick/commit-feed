@@ -32,7 +32,7 @@ class BoardGrid extends React.Component {
 }
 
 const map_state_to_props = state => {
-  return { boards: state.boards }
+  return { boards: state.boards.filtered }
 }
 
 export default connect(map_state_to_props)(BoardGrid)

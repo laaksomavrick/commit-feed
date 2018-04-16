@@ -89,7 +89,7 @@ class SideBar extends React.Component {
 const map_state_to_props = state => {
   return { 
     open: state.ui.sidebar_open,
-    boards: state.boards
+    boards: state.boards.all
   }
 }
 

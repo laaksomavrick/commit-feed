@@ -4,7 +4,8 @@ import { get, post } from '../utils/http.js'
 import { 
   SET_BOARDS,
   ADD_BOARD,
-  UPDATE_BOARD
+  UPDATE_BOARD,
+  SET_FILTERED_BOARDS
 } from '../constants/constants.js'
 
 export const add_board = (new_state) => {
@@ -24,6 +25,13 @@ export const update_board = (new_state) => {
 export const set_boards = (new_state) => {
   return {
     type: SET_BOARDS,
+    new_state
+  }
+}
+
+export const set_filtered_boards = new_state => {
+  return {
+    type: SET_FILTERED_BOARDS,
     new_state
   }
 }

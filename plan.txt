@@ -1,6 +1,6 @@
-"boards" header
 starring boards
 err popover from server actions
-search bar
+SASS for sizing variables?
 
 List of tasks with headers? Or Kanban thingy?
+
