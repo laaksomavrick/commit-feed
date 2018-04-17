@@ -67,7 +67,7 @@ class AddBoardModal extends React.Component {
 
     return (
       <Dialog
-        className="dialog-container"
+        className="add-board-dialog"
         open={open}
         onClose={this.handle_close}
       >

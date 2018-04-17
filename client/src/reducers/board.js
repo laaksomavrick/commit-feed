@@ -21,8 +21,10 @@ const boards = (
         filtered: action.new_state
       })
     case ADD_BOARD:
+      //TODO, need logic for filtering here as well; move filtering to service, use here and in component
       return Object.assign({}, state, {
-        all: [...state.boards.all, action.new_state]
+        all: [...state.all, action.new_state],
+        filtered: [...state.filtered, action.new_state]
       })
     case UPDATE_BOARD:
       const filtered = state.all.filter(board => board.id !== action.new_state.temp_id)

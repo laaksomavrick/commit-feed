@@ -1,3 +1,4 @@
-.dialog-container > * {
-  min-width: 30%;
+.add-board-dialog > * {
+  width: 35%;
+  min-width: 300px;
 }
