@@ -1,8 +1,7 @@
+*** err popover from server actions ***
 starring boards
-err popover from server actions
-SASS for sizing variables?
 login screen; github oauth to username / password
 custom board colours
 
-List of tasks with headers? Or Kanban thingy?
-
+tasks
+  list or kanban? both? what to start with?

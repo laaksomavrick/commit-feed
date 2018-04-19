@@ -6,6 +6,7 @@ import passport from 'passport'
 import { is_authenticated } from './auth/auth'
 import UserController from './controllers/user'
 import BoardController from './controllers/board'
+import TaskController from './controllers/task'
 
 import UserQuery from './queries/user'
 
@@ -27,5 +28,7 @@ router.use('/user/current', UserController.current)
 
 router.get('/boards', BoardController.index)
 router.post('/boards', BoardController.create)
+
+router.get('/tasks', TaskController.index)
 
 export default router

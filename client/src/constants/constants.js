@@ -11,6 +11,10 @@ export const ADD_BOARD = 'ADD_BOARD'
 export const UPDATE_BOARD = 'UPDATE_BOARD'
 export const SET_FILTERED_BOARDS = 'SET_FILTERED_BOARDS'
 
+// task constants
+
+export const SET_TASKS = 'SET_TASKS'
+
 // ui constants
 
 export const SET_HOME_LOADED = 'SET_HOME_LOADED'
