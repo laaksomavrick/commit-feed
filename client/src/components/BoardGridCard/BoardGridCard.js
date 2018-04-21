@@ -2,25 +2,21 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
 import Card, { CardContent } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
+
+import BoardRoute from '../Route/BoardRoute.js'
 
 import './BoardGridCard.css'
 
 class BoardGridCard extends React.Component {
-
-  handle_click = e => {
-    const { history, board } = this.props
-    history.push(`/board/${board.id}`)
-  }
 
   render() {
 
     const { board } = this.props
 
     return (
-      <div className="board-grid-card" onClick={this.handle_click}>
+      <BoardRoute board={board} className="board-grid-card">
         <Card>
           <CardContent>
             <Typography variant="headline" component="h2">
@@ -28,7 +24,7 @@ class BoardGridCard extends React.Component {
             </Typography>
           </CardContent>
         </Card>
-      </div>
+      </BoardRoute>
     )
   }
 }
@@ -37,5 +33,5 @@ BoardGridCard.propTypes = {
   board: PropTypes.object.isRequired
 }
 
-export default withRouter(BoardGridCard)
+export default BoardGridCard
 

@@ -1,12 +1,8 @@
-// PrivateRoute.js
-// Router component to guard certain client side routes
+// Route/PrivateRoute.js
 
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-
-import { is_logged_in } from '../utils/auth.js'
-
-console.log(is_logged_in())
+import { is_logged_in } from '../../utils/auth.js'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

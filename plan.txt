@@ -1,7 +1,22 @@
-*** err popover from server actions ***
-starring boards
-login screen; github oauth to username / password
-custom board colours
+essential:
+  err popover
+  login screen
+  task details
+  tasks
+
+nice to have:
+  kanban/list toggle
+  starring boards
+  custom board colours
+
+
 
 tasks
   list or kanban? both? what to start with?
+
+    => A board has many column...
+    => A column has many tasks...
+    => A task doesn't necessarily need to be in a column
+    => A task DOES necessarily need to be in a board
+
+    make list for now (easier)

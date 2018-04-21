@@ -3,7 +3,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import NavigationBar from '../NavigationBar/NavigationBar.js'
 import BoardGrid from '../BoardGrid/BoardGrid.js'
 import AddBoardDialog from '../AddBoardDialog/AddBoardDialog.js'
@@ -27,8 +27,9 @@ class Home extends React.Component {
 
     const element = ui.home_loaded ? (
         <Switch>
-          <Route exact path="/" component={BoardGrid} />
           <Route path="/board/:id" component={Tasks} />
+          <Route exact path="/" component={BoardGrid} />
+          <Route component={() => <Redirect to="/" /> } /> 
         </Switch>
     ) : (
       <div> Loading </div>

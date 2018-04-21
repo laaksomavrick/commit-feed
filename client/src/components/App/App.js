@@ -9,7 +9,7 @@ import {
   Switch
 } from 'react-router-dom'
 
-import PrivateRoute from '../PrivateRoute.js'
+import PrivateRoute from '../Route/PrivateRoute.js'
 import Login from '../Login.js'
 import Home from '../Home/Home.js'
 import './App.css'

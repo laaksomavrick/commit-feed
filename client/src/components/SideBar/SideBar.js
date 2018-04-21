@@ -9,6 +9,8 @@ import ListSubHeader from 'material-ui/List/ListSubHeader'
 import Divider from 'material-ui/Divider'
 import AddIcon from 'material-ui-icons/Add'
 
+import BoardRoute from '../Route/BoardRoute.js'
+
 import { set_sidebar_open, set_add_board_modal_open } from '../../actions/ui.js'
 
 import './SideBar.css'
@@ -31,9 +33,11 @@ class SideBar extends React.Component {
     const { open } = this.props
     const { boards } = this.props
     const content = boards.map((board, index) =>
-      <ListItem button key={index}>
-        <ListItemText primary={board.name}></ListItemText>
-      </ListItem>
+      <BoardRoute board={board} key={index}>
+        <ListItem button>
+          <ListItemText primary={board.name}></ListItemText>
+        </ListItem>
+      </BoardRoute>
     )
     const actions = (
       <ListItem button key={0} onClick={this.handle_add}>
