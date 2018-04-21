@@ -22,9 +22,7 @@ export default class App extends React.Component {
         <div className="app-container">
           <Switch>
             <Route path="/login" component={Login} />
-            <PrivateRoute path="/app" component={Home} />
-            <Route exact path="/" component={() => <Redirect to="/app" />} /> 
-            <Route path="/*" component={() => <Redirect to="/" />} /> 
+            <PrivateRoute component={Home} />
           </Switch>
         </div>
       </Router>

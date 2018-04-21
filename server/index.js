@@ -46,6 +46,7 @@ app.use('/api', api_routes)
 // expressListRoutes({ prefix: '/auth', }, 'API:', auth_routes)
 
 app.get('*', (req, res) => {
+  console.log("HERE")
   const data = { error: 'Route not found'}
   res.status(404).json(data)
 })
