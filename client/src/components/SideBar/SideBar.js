@@ -33,7 +33,12 @@ class SideBar extends React.Component {
     const { open } = this.props
     const { boards } = this.props
     const content = boards.map((board, index) =>
-      <BoardRoute className="side-bar__item" board={board} key={index}>
+      <BoardRoute 
+        className="side-bar__item" 
+        board={board} 
+        afterClick={this.handle_close}
+        key={index}
+      >
         <ListItem button>
           <ListItemText primary={board.name}></ListItemText>
         </ListItem>

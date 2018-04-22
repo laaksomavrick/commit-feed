@@ -36,11 +36,13 @@ class Home extends React.Component {
     )
 
     return (
-      <div className="home-container">
+      <div className="home">
         <NavigationBar />
         <SideBar />
         <AddBoardDialog />
-        {element}
+        <div className="home__content">
+          {element}
+        </div>
       </div>
     )
 

@@ -1,9 +1,4 @@
 .board-grid {
-  padding: 20px;
-  max-width: 1250px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .board-grid > *:first-child {

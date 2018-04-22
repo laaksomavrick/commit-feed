@@ -11,15 +11,16 @@ class BoardRoute extends React.Component {
   }
 
   handle_click = e => {
-    const { history, board } = this.props
+    const { history, board, afterClick } = this.props
     history.push(`/board/${board.id}`)
+    if (afterClick) {
+      afterClick()
+    }
   }
 
   render() {
 
     const { className } = this.props
-
-    console.log(this.props.children)
 
     return (
       <div className={className} onClick={this.handle_click}>

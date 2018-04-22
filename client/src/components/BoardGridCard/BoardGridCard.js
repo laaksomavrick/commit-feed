@@ -9,25 +9,17 @@ import BoardRoute from '../Route/BoardRoute.js'
 
 import './BoardGridCard.css'
 
-class BoardGridCard extends React.Component {
-
-  render() {
-
-    const { board } = this.props
-
-    return (
-      <BoardRoute board={board} className="board-grid-card">
-        <Card>
-          <CardContent>
-            <Typography variant="headline" component="h2">
-              {board.name}
-            </Typography>
-          </CardContent>
-        </Card>
-      </BoardRoute>
-    )
-  }
-}
+const BoardGridCard = ({ board }) => (
+  <BoardRoute board={board} className="board-grid-card">
+    <Card>
+      <CardContent>
+        <Typography variant="headline" component="h2">
+          {board.name}
+        </Typography>
+      </CardContent>
+    </Card>
+  </BoardRoute>
+)
 
 BoardGridCard.propTypes = {
   board: PropTypes.object.isRequired

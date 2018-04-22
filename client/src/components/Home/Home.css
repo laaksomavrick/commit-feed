@@ -1,6 +1,14 @@
-.home-container {
+.home {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+.home__content {
+  width: 100%;
+  max-width: 1250px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
