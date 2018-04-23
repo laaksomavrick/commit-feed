@@ -1,0 +1,21 @@
+.task-list-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 72px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.task-list-header__name {
+  padding-right: 48px;
+  margin: auto!important;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-list-header__back {
+  opacity: 0.54;
+}

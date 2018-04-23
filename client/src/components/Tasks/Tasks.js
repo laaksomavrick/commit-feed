@@ -3,7 +3,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Paper from 'material-ui/Paper'
+
 import TaskList from '../TaskList/TaskList.js'
+import TaskListHeader from '../TaskListHeader/TaskListHeader.js'
 
 import './Tasks.css'
 
@@ -11,15 +14,16 @@ class Tasks extends React.Component {
 
   render() {
 
-    const { tasks } = this.props
+    const { tasks, board } = this.props
 
-    // a settings bar (board name, kanban/list, back button, etc..)
     //TODO a task section header (will correspond to columns)
-    //a list of tasks
 
     return (
       <div className="tasks">
-        <TaskList tasks={tasks} />
+        <Paper>
+          <TaskListHeader board={board} />
+          <TaskList tasks={tasks} />
+        </Paper>
       </div>
     )
 
@@ -31,9 +35,11 @@ const map_state_to_props = (state, props) => {
 
   const board_id = parseInt(props.match.params.id)
   const tasks = state.tasks.filtered.filter(task => task.board_id === board_id)
+  const board = state.boards.all.find(board => board.id === board_id)
 
   return {
-    tasks
+    tasks,
+    board
   }
 
 }

@@ -14,7 +14,7 @@ const TaskList = ({ tasks }) => (
     <List>
       {
         tasks.map((task, index) => 
-          <TaskListItem task={task} key={index} />
+          <TaskListItem task={task} key={task.id} index={index} />
         )
       }
     </List>

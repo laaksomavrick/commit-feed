@@ -24,7 +24,6 @@ class AddBoardModal extends React.Component {
     error: false
   }
 
-
   handle_close = () => {
     const { dispatch } = this.props
     dispatch(set_add_board_modal_open(false))
@@ -74,6 +73,7 @@ class AddBoardModal extends React.Component {
         <DialogTitle>Create new board</DialogTitle>
         <DialogContent>
           <TextField
+            name="name"
             error={error}
             onChange={this.handle_change}
             margin="dense"
