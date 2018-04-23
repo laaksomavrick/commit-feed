@@ -13,7 +13,6 @@ const TaskListItem = ({ task }) => (
   <div className="task-list-item">
     <ListItem
       key={task.id}
-      dense
       button
     >
       <Checkbox
