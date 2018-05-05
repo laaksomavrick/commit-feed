@@ -8,7 +8,7 @@ import { ListItem, ListItemText } from 'material-ui/List'
 import Checkbox from 'material-ui/Checkbox'
 import IconButton from 'material-ui/IconButton'
 
-import './TaskListItem.css'
+import './TaskListItem.scss'
 
 const TaskListDivider = ({ index }) => {
   if (index !== 0) {

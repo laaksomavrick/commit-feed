@@ -11,7 +11,7 @@ import SideBar from '../SideBar/SideBar.js'
 import Tasks from '../Tasks/Tasks.js'
 import { get_initial_data } from '../../actions/app.js'
 
-import './Home.css'
+import './Home.scss'
 
 class Home extends React.Component {
 

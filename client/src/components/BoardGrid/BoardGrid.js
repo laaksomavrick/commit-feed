@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import BoardGridCard from '../BoardGridCard/BoardGridCard.js'
 import Typography from 'material-ui/Typography'
 
-import './BoardGrid.css'
+import './BoardGrid.scss'
 
 class BoardGrid extends React.Component {
 

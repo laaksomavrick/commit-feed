@@ -8,7 +8,7 @@ import ArrowBackIcon from 'material-ui-icons/ArrowBack'
 
 import BackRoute from '../Route/BackRoute.js'
 
-import './TaskListHeader.css'
+import './TaskListHeader.scss'
 
 //back button, board name
 

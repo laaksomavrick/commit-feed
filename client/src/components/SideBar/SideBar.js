@@ -13,7 +13,7 @@ import BoardRoute from '../Route/BoardRoute.js'
 
 import { set_sidebar_open, set_add_board_modal_open } from '../../actions/ui.js'
 
-import './SideBar.css'
+import './SideBar.scss'
 
 class SideBar extends React.Component {
 

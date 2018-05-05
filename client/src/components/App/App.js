@@ -12,7 +12,7 @@ import {
 import PrivateRoute from '../Route/PrivateRoute.js'
 import Login from '../Login.js'
 import Home from '../Home/Home.js'
-import './App.css'
+import './App.scss'
 
 export default class App extends React.Component {
 

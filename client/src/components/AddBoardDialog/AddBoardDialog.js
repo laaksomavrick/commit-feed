@@ -15,7 +15,7 @@ import Dialog, {
 import { set_add_board_modal_open } from '../../actions/ui.js'
 import { create_board } from '../../actions/board.js'
 
-import './AddBoardDialog.css'
+import './AddBoardDialog.scss'
 
 class AddBoardModal extends React.Component {
 

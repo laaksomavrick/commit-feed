@@ -9,7 +9,7 @@ import SearchIcon from 'material-ui-icons/Search'
 
 import { set_filtered_boards } from '../../actions/board.js'
 
-import './SearchBar.css'
+import './SearchBar.scss'
 
 class SearchBar extends React.Component {
 

@@ -7,7 +7,7 @@ import List from 'material-ui/List'
 
 import TaskListItem from '../TaskListItem/TaskListItem.js'
 
-import './TaskList.css'
+import './TaskList.scss'
 
 const TaskList = ({ tasks }) => (
   <div className="task-list">

@@ -8,7 +8,7 @@ import Paper from 'material-ui/Paper'
 import TaskList from '../TaskList/TaskList.js'
 import TaskListHeader from '../TaskListHeader/TaskListHeader.js'
 
-import './Tasks.css'
+import './Tasks.scss'
 
 class Tasks extends React.Component {
 

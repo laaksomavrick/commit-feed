@@ -9,7 +9,7 @@ import Menu, { MenuItem } from 'material-ui/Menu'
 
 import { set_add_board_modal_open } from '../../actions/ui.js'
 
-import './NavigationAddButton.css'
+import './NavigationAddButton.scss'
 
 class NavigationAddButton extends React.Component {
 

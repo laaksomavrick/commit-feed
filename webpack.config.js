@@ -11,8 +11,13 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       "/api/**": "http://localhost:3001",
-      "/auth/**": "http://localhost:3001"
+      "/auth/**": "http://localhost:3001",
     }
+  },
+  resolve: {
+    alias: {
+      common: path.resolve(__dirname, 'common')
+    },
   },
   module: {
     rules: [
@@ -22,7 +27,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['react', 'es2015', 'stage-2']
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
       },
@@ -32,21 +38,25 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['react']
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
       },
       {
-        test: /\.css$/,
-        use: 'style-loader'
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader"
+          }, 
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
       },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: false
-        }
-      }
     ]
   },
 

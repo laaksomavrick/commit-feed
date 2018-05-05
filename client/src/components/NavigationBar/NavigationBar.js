@@ -14,7 +14,7 @@ import SearchBar from '../SearchBar/SearchBar.js'
 
 import { set_sidebar_open } from '../../actions/ui.js'
 
-import './NavigationBar.css'
+import './NavigationBar.scss'
 
 class NavigationBar extends React.Component {
 

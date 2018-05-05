@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography'
 
 import BoardRoute from '../Route/BoardRoute.js'
 
-import './BoardGridCard.css'
+import './BoardGridCard.scss'
 
 const BoardGridCard = ({ board }) => (
   <BoardRoute board={board} className="board-grid-card">
