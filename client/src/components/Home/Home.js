@@ -8,7 +8,7 @@ import NavigationBar from '../NavigationBar/NavigationBar.js'
 import BoardGrid from '../BoardGrid/BoardGrid.js'
 import AddBoardDialog from '../AddBoardDialog/AddBoardDialog.js'
 import SideBar from '../SideBar/SideBar.js'
-import Tasks from '../Tasks/Tasks.js'
+import BoardContainer from '../BoardContainer/BoardContainer.js'
 import { get_initial_data } from '../../actions/app.js'
 
 import './Home.scss'
@@ -16,8 +16,8 @@ import './Home.scss'
 class Home extends React.Component {
 
   componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(get_initial_data())
+    const { setup } = this.props
+    setup()
   }
 
   render() {
@@ -27,7 +27,7 @@ class Home extends React.Component {
 
     const element = ui.home_loaded ? (
         <Switch>
-          <Route path="/board/:id" component={Tasks} />
+          <Route path="/board/:id" component={BoardContainer} />
           <Route exact path="/" component={BoardGrid} />
           <Route component={() => <Redirect to="/" /> } /> 
         </Switch>
@@ -51,7 +51,15 @@ class Home extends React.Component {
 }
 
 const map_state_to_props = state => {
-  return { ui: state.ui }
+  return { 
+    ui: state.ui 
+  }
 }
 
-export default connect(map_state_to_props)(Home)
+const map_dispatch_to_props = dispatch => {
+  return {
+    setup: () => { dispatch(get_initial_data()) }
+  }
+}
+
+export default connect(map_state_to_props, map_dispatch_to_props)(Home)
