@@ -13,7 +13,7 @@ const BoardGridCard = ({ board }) => (
   <BoardRoute board={board} className="board-grid-card">
     <Card>
       <CardContent>
-        <Typography variant="headline" component="h2">
+        <Typography variant="subheading" className="board-grid-card__text">
           {board.name}
         </Typography>
       </CardContent>

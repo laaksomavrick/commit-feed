@@ -27,7 +27,7 @@ class NavigationBar extends React.Component {
     return (
       <div className="nav-bar">
         <AppBar position="static">
-          <Toolbar>
+          <Toolbar className="nav-bar__toolbar">
             <IconButton color="inherit" onClick={this.handle_menu_click}>
               <MenuIcon />
             </IconButton>
