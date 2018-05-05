@@ -51,14 +51,13 @@ export const get_boards = () => {
 
 export const create_board = (board) => {
   return dispatch => {
-    dispatch(add_board(board))
     return post('boards', board)
       .then(
         res => res.json(),
         err => console.err('Error in create_board:', err)
       )
       .then(
-        json => dispatch(update_board(json.data))
+        json => dispatch(add_board(json.data))
       )
   }
 }
