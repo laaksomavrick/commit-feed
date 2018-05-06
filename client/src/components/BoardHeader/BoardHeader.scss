@@ -1,4 +1,4 @@
-.task-list-header {
+.board-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,7 +7,7 @@
   padding-right: 24px;
 }
 
-.task-list-header__name {
+.board-header__name {
   padding-right: 48px;
   margin: auto!important;
   height: 24px;
@@ -16,6 +16,6 @@
   text-overflow: ellipsis;
 }
 
-.task-list-header__back {
+.board-header__back {
   opacity: 0.54;
 }

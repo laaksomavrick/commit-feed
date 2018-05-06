@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Kanban from '../Kanban/Kanban.js'
 import Tasks from '../Tasks/Tasks.js'
 import PropRoute from '../Route/PropRoute.js'
+import BoardHeader from '../BoardHeader/BoardHeader.js'
 
 import './BoardContainer.scss'
 
@@ -19,11 +20,12 @@ class BoardContainer extends React.Component {
 
     return (
       <div className="board-container">
-        <Switch>
-          <PropRoute path={`${match.url}/kanban`} component={Kanban} board={board} tasks={tasks} columns={columns} />
-          <PropRoute path={`${match.url}/list`} component={Tasks} board={board} tasks={tasks} />
-          <Route component={() => <Redirect to={`${match.url}/kanban`} /> } />
-        </Switch>
+          <BoardHeader board={board} />
+          <Switch>
+            <PropRoute path={`${match.url}/kanban`} component={Kanban} board={board} tasks={tasks} columns={columns} />
+            <PropRoute path={`${match.url}/list`} component={Tasks} board={board} tasks={tasks} />
+            <Route component={() => <Redirect to={`${match.url}/kanban`} /> } />
+          </Switch>
       </div>
     )
 

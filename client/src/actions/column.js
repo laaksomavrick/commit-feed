@@ -16,7 +16,7 @@ export const set_columns = new_state => {
 export const get_columns = () => {
   return async dispatch => {
     try {
-      const res = await get('tasks')
+      const res = await get('columns')
       const json = await res.json()
       dispatch(set_columns(json.data))
     } catch (e) {

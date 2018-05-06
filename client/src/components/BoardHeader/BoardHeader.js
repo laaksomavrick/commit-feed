@@ -1,4 +1,4 @@
-// components/TaskListHeader/TaskListHeader.js
+// components/BoardHeader/TaskListHeader.js
 
 import React from 'react'
 
@@ -8,21 +8,19 @@ import ArrowBackIcon from 'material-ui-icons/ArrowBack'
 
 import BackRoute from '../Route/BackRoute.js'
 
-import './TaskListHeader.scss'
+import './BoardHeader.scss'
 
-//back button, board name
-
-const TaskListHeader = ({ board }) => (
-  <div className="task-list-header">
-    <BackRoute className="task-list-header__back">
+const BoardHeader = ({ board }) => (
+  <div className="board-header">
+    <BackRoute className="board-header__back">
       <IconButton color="inherit">
         <ArrowBackIcon />
       </IconButton>
     </BackRoute>
-    <Typography className="task-list-header__name" variant="title">
+    <Typography className="board-header__name" variant="title">
       {board.name}
     </Typography>
   </div>
 )
 
-export default TaskListHeader
+export default BoardHeader

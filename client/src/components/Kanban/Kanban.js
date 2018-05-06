@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import Column from '../Column/Column.js'
+
 import './Kanban.scss'
 
 class Kanban extends React.Component {
@@ -12,7 +14,12 @@ class Kanban extends React.Component {
 
     return (
       <div className="kanban">
-        <h1>hi</h1>
+        {columns.map(column => {
+          const column_tasks = tasks.filter(t => t.column_id === column.id)
+          return (
+            <Column key={column.id} column={column} tasks={column_tasks} />
+          )
+        })}
       </div>
     )
 
