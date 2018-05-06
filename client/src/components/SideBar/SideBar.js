@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import Drawer from 'material-ui/Drawer'
 import List, { ListItem, ListItemText, ListItemIcon } from 'material-ui/List'
-import ListSubHeader from 'material-ui/List/ListSubHeader'
+import ListSubheader from 'material-ui/List/ListSubheader'
 import Divider from 'material-ui/Divider'
 import AddIcon from 'material-ui-icons/Add'
 
@@ -63,13 +63,13 @@ class SideBar extends React.Component {
           <List 
             className="side-bar__list"
             subheader={
-              <ListSubHeader 
+              <ListSubheader 
                 component="div"
                 disableSticky={true}
                 className="side-bar__sub-header"
               >
                   Boards
-                </ListSubHeader>
+                </ListSubheader>
             }
           >
             {content}    
@@ -77,13 +77,13 @@ class SideBar extends React.Component {
           <Divider />
           <List
             subheader={
-              <ListSubHeader 
+              <ListSubheader 
                 component="div" 
                 disableSticky={true}
                 className="side-bar__sub-header"
               >
                 Actions
-              </ListSubHeader>
+              </ListSubheader>
             }
           >
             {actions}
