@@ -8,6 +8,7 @@ import ui from './ui.js'
 import user from './user.js'
 import boards from './board.js'
 import tasks from './task.js'
+import columns from './column.js'
 
 /*
  *
@@ -16,7 +17,8 @@ import tasks from './task.js'
  *    ui: { ... }
  *    user: { ... },
  *    boards: { ... }
- *    tasks: { ... }
+ *    tasks: { ... },
+ *    columns: { ... }
  *  }
  *
  */
@@ -27,7 +29,8 @@ const root_reducer = combineReducers({
   ui,
   user,
   boards,
-  tasks
+  tasks,
+  columns
 })
 
 export default root_reducer

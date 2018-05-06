@@ -7,6 +7,7 @@ import { is_authenticated } from './auth/auth'
 import UserController from './controllers/user'
 import BoardController from './controllers/board'
 import TaskController from './controllers/task'
+import ColumnController from './controllers/column'
 
 import UserQuery from './queries/user'
 
@@ -30,5 +31,7 @@ router.get('/boards', BoardController.index)
 router.post('/boards', BoardController.create)
 
 router.get('/tasks', TaskController.index)
+
+router.get('/columns', ColumnController.index)
 
 export default router

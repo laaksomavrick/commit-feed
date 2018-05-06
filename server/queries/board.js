@@ -1,4 +1,4 @@
-// queries/user.js
+// queries/board.js
 
 import db from '../database/db'
 import Query from './'

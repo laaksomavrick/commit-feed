@@ -15,6 +15,10 @@ export const SET_FILTERED_BOARDS = 'SET_FILTERED_BOARDS'
 
 export const SET_TASKS = 'SET_TASKS'
 
+// column constants
+
+export const SET_COLUMNS = 'SET_COLUMNS'
+
 // ui constants
 
 export const SET_HOME_LOADED = 'SET_HOME_LOADED'
