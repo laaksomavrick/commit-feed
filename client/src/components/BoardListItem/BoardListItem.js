@@ -1,4 +1,4 @@
-// components/TaskListItem/TaskListItem.js
+// components/BoardListItem/BoardListItem.js
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -8,18 +8,18 @@ import { ListItem, ListItemText } from 'material-ui/List'
 import Checkbox from 'material-ui/Checkbox'
 import IconButton from 'material-ui/IconButton'
 
-import './TaskListItem.scss'
+import './BoardListItem.scss'
 
-const TaskListDivider = ({ index }) => {
+//TODO: task list only
+const BoardListDivider = ({ index }) => {
   if (index !== 0) {
     return <Divider inset />
   }
   return null
 } 
 
-const TaskListItem = ({ task, index }) => (
-  <div className="task-list-item">
-    <TaskListDivider index={index} />
+const BoardListItem = ({ task, index }) => (
+  <div className="board-list-item">
     <ListItem
       key={task.id}
       button
@@ -34,8 +34,8 @@ const TaskListItem = ({ task, index }) => (
   </div>
 )
 
-TaskListItem.propTypes = {
+BoardListItem.propTypes = {
   task: PropTypes.object.isRequired
 }
 
-export default TaskListItem
+export default BoardListItem

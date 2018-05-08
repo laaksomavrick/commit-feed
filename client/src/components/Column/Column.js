@@ -3,6 +3,7 @@
 import React from 'react'
 
 import ColumnHeader from '../ColumnHeader/ColumnHeader.js'
+import BoardList from '../BoardList/BoardList.js'
 
 import './Column.scss'
 
@@ -16,6 +17,7 @@ class Column extends React.Component {
 
       <div className="column">
         <ColumnHeader name={column.name} />
+        <BoardList tasks={tasks} />
       </div>
 
     )
