@@ -2,7 +2,6 @@
 
 import React from 'react'
 
-import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
 
 import './ColumnHeader.scss'
@@ -16,11 +15,9 @@ class ColumnHeader extends React.Component {
     return (
 
       <div className="column-header">
-        <Paper>
-          <Typography className="column-header__text" variant="subheading">
-            {name}
-          </Typography>
-        </Paper>
+        <Typography className="column-header__text" variant="headline">
+          {name}
+        </Typography>
       </div>
 
     )
