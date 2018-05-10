@@ -4,6 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import BoardGridCard from '../BoardGridCard/BoardGridCard.js'
 import Typography from 'material-ui/Typography'
+import List from 'material-ui/List'
 
 import './BoardGrid.scss'
 
