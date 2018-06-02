@@ -1,3 +1,3 @@
-# This repo is in progress and is my current side project.
+# This repo unfinished and abandoned.
 
-Check back for updates or feel free to view my commit history to see the progress I'm making. Upon completion I'll host & advertise it :)
+However, it still serves as a good example of a barebones implementation of the stated technologies in the description.
